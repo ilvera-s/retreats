@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Проживание, питание и баня на ретрите — что взять с собой и как проходит банный ритуал.">
+    <title>Проживание | Ретриты</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4A3B5E;
+            --accent-color: #C5A880;
+            --bg-light: #F9F7F5;
+            --text-dark: #2D2D2D;
+            --text-muted: #66615f;
+            --text-light: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 700; color: var(--primary-color); }
+        a { color: inherit; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* ---------- Верхняя навигация ---------- */
+        .site-nav {
+            background: #fff;
+            border-bottom: 1px solid rgba(74, 59, 94, 0.08);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .site-nav .container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover { color: var(--accent-color); }
+
+        /* ---------- Hero страницы ---------- */
+        .page-hero {
+            padding: 60px 0 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+        }
+
+        .page-overline {
+            display: block;
+            margin-bottom: 14px;
+            color: #8B6B3D;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            max-width: 760px;
+            margin: 0 auto 20px;
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            line-height: 1.15;
+        }
+
+        .page-lead {
+            max-width: 640px;
+            margin: 0 auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* ---------- Блоки ---------- */
+        .ural-block { padding: 60px 0; }
+        .ural-block:nth-child(even) { background: #fff; }
+
+        .ural-block-label {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #8B6B3D;
+            margin-bottom: 10px;
+        }
+
+        .ural-block-title {
+            font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+            margin-bottom: 22px;
+        }
+
+        .rt-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin: 26px 0 12px;
+        }
+
+        .rt-text {
+            font-size: 1.02rem;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .rt-text b { color: var(--primary-color); }
+
+        .rt-quote {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 28px 0;
+        }
+
+        .intro-banner {
+            background: var(--bg-light);
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .ural-block:nth-child(even) .intro-banner { background: var(--bg-light); }
+
+        .ural-list {
+            list-style: none;
+            margin: 16px 0 20px;
+        }
+
+        .ural-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .ural-list li::before {
+            content: "✦";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .tag-list { list-style: none; margin: 14px 0 22px; }
+
+        .tag-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .tag-list li::before {
+            content: "🟠";
+            position: absolute;
+            left: 0;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- Чередующиеся ряды: фото + описание ---------- */
+        .amenities {
+            margin: 34px 0 46px;
+        }
+
+        .amenity-row {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            margin-bottom: 40px;
+        }
+
+        .amenity-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .amenity-photos {
+            flex: 1 1 48%;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .amenity-photos.single { max-width: 380px; }
+
+        .amenity-photos img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 12px 26px rgba(74, 59, 94, 0.12);
+            display: block;
+        }
+
+        .amenity-text {
+            flex: 1 1 48%;
+        }
+
+        .amenity-text h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .amenity-text p {
+            color: #444;
+            font-size: 1.02rem;
+        }
+
+        .amenity-extra {
+            max-width: 300px;
+            margin: -10px 0 40px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(74, 59, 94, 0.12);
+        }
+
+        .amenity-extra img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 760px) {
+            .amenity-row,
+            .amenity-row.reverse {
+                flex-direction: column;
+            }
+
+            .amenity-photos.single {
+                max-width: none;
+            }
+
+            .amenity-extra {
+                max-width: none;
+                margin: -20px 0 36px;
+            }
+        }
+
+        /* ---------- Фотомозаика (масонри) ---------- */
+        .photo-masonry {
+            column-count: 3;
+            column-gap: 16px;
+            margin-top: 34px;
+        }
+
+        .photo-masonry figure {
+            margin: 0 0 16px;
+            break-inside: avoid;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(74, 59, 94, 0.12);
+        }
+
+        .photo-masonry img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-masonry figure:hover img { transform: scale(1.04); }
+
+        @media (max-width: 760px) {
+            .photo-masonry { column-count: 2; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-masonry { column-count: 1; }
+            .ural-block { padding: 44px 0; }
+            .cta-call { align-items: center; text-align: center; }
+        }
+
+        /* ---------- CTA ---------- */
+        .cta-section { padding: 70px 0 90px; text-align: center; }
+        .cta-section h2 { margin-bottom: 16px; }
+
+        .cta-section p {
+            max-width: 560px;
+            margin: 0 auto 30px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-call {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .cta-call span {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            color: #8B6B3D;
+            font-weight: 600;
+        }
+
+        .cta-call a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cta-call a:hover { text-decoration: underline; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover { background-color: transparent; color: var(--primary-color); }
+
+       /* --- Фирменный Footer на основе вашего CSS --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #333;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Контейнер соцсетей */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Круглые кнопки иконок */
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Анимация при наведении */
+        .social-link:hover { 
+            transform: translateY(-5px); 
+            color: #fff;
+        }
+        
+        /* Единый акцентный hover в фирменной палитре */
+        .social-link.tg:hover,
+        .social-link.wa:hover,
+        .social-link.inst:hover,
+        .social-link.vk:hover,
+        .social-link.yt:hover,
+        .social-link.phone:hover,
+        .social-link.mail:hover { background: var(--accent-color); color: #2D2D2D; }
+
+        /* Кнопка MAX */
+        .social-link.max { background: #20232a; border: 1px solid #3a3f4b; }
+        .social-link.max:hover { background: var(--accent-color); }
+        .social-link.max:hover .max-icon { color: #2D2D2D; }
+        
+        .max-icon {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="container" style="max-width:1200px;">
+            <a href="index.html" class="site-logo">Ретриты</a>
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <span class="page-overline">🏠 Проживание</span>
+            <h1>Проживание и баня, что взять собой.</h1>
+            <p class="page-lead">Всё, что нужно знать о быте: где вы будете жить, как питаться, что взять с собой в горы и как устроен банный ритуал — четыре встречи с огнём и телом.</p>
+        </div>
+    </header>
+
+    <!-- ===== Блок 1: Проживание и питание ===== -->
+    <section class="ural-block">
+        <div class="container">
+            <span class="ural-block-label">Важно</span>
+            <h2 class="ural-block-title">Проживание и питание</h2>
+
+            <div class="intro-banner">
+                Проживание в трёхместных номерах, трёхразовое питание вегетарианское 🥗
+            </div>
+
+            <div class="amenities">
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence11.jpeg" alt="Дом снаружи" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Дом</h4>
+                        <p>Мы живём в уютном деревянном доме у подножия гор — тихое, тёплое место, куда хочется возвращаться после практик и восхождений.</p>
+                    </div>
+                </div>
+
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence14.jpeg" alt="Комнаты" loading="lazy" style="aspect-ratio:951/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Комнаты</h4>
+                        <p>Размещение — в трёхместных номерах: просто, тепло и по-домашнему, чтобы всё внимание доставалось практикам, а не бытовым вопросам.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence16.jpeg" alt="Терраса" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Терраса</h4>
+                        <p>Открытая терраса со стороны дома — место для утреннего чая, разговоров и тишины с видом на горы.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence12.jpeg" alt="Кухня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Кухня</h4>
+                        <p>Трёхразовое вегетарианское питание — свежее, лёгкое и питательное, поддерживающее тело во время глубоких практик.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence17.jpeg" alt="Санузел" loading="lazy" style="aspect-ratio:817/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Санузел</h4>
+                        <p>Чистый и комфортный санузел — всё для того, чтобы бытовые мелочи не отвлекали от главного.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Блок: Что взять с собой на ретрит ===== -->
+    <section class="ural-block">
+        <div class="container">
+            <span class="ural-block-label">Подготовка</span>
+            <h2 class="ural-block-title">❗️Что взять с собой❗️ на ретрит «Перерождение Огнём»</h2>
+            <p class="rt-text" style="font-weight:600; color: var(--primary-color);">Подъём на гору Иремель</p>
+
+            <p class="rt-text">Друзья! Погода в горах переменчива, нас ждут глубокие практики, встреча со стихиями и внутренняя работа. К подготовке стоит подойти осознанно — чтобы тело было свободно, а дух ни на что не отвлекался.</p>
+
+            <div class="amenities">
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence31.jpeg" alt="Обувь и одежда для подъёма" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">1️⃣ Обувь и одежда для подъёма</h3>
+                        <p>Обувь — самое важное. Выбирай кроссовки или треккинговые ботинки с надёжной фиксацией голеностопа. Нога должна быть защищена от травм на каменистых тропах.</p>
+                        <p>Приветствуются ортопедические стельки — если ты к ним привык, бери с собой.</p>
+                        <p style="margin-top:12px;"><b>❗️ Обязательно</b></p>
+                        <ul class="tag-list">
+                            <li>дождевик (погода на вершине меняется за минуты)</li>
+                            <li>жилетка с капюшоном (не сковывает движения и спасает от ветра), или непродуваемая куртка</li>
+                            <li>небольшой рюкзак для личных вещей на подъём</li>
+                            <li>сидушка под попу</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence32.jpeg" alt="Питьё в поход" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">2️⃣ Питьё</h3>
+                        <p>Возьми с собой:</p>
+                        <ul class="tag-list">
+                            <li>термос с горячим чаем или водой и вкусняшки</li>
+                            <li>бутылочку для негазированной воды (она всегда должна быть под рукой)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence33.jpeg" alt="Баня и купание в Ларкином ущелье" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">3️⃣ Баня и купание в Ларкином ущелье</h3>
+                        <ul class="ural-list">
+                            <li>Нас ждёт купель на подъёме и обливания в Ларкином ущелье. Вода холодная, бельё сохнет долго — бери два купальника (или плавки), чтобы чередовать. Сланцы или шлёпки.</li>
+                            <li>После бани и контрастных процедур пригодится лёгкий халат — махровый или вафельный, чтобы укутаться и в тепле дойти до места отдыха.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence34.jpeg" alt="Белая одежда для ритуала" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">4️⃣ Особый пункт — для ритуалов</h3>
+                        <p><b>Белая одежда обязательна ❗️</b></p>
+                        <p>Женщинам: белое платье, туника или свободный светлый наряд.<br>Мужчинам: белая рубашка, футболка, льняной костюм — любая одежда светлых, белых тонов.</p>
+                        <p>Это для Инициации и Заключительного Огненного Ритуала. Белый цвет — символ чистоты, перерождения и нового начала. В этом облачении мы встретим рассвет и запечатаем трансформацию.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence35.jpeg" alt="Общие рекомендации" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">5️⃣ Общие рекомендации</h3>
+                        <ul class="tag-list">
+                            <li>Одежда должна быть свободной и из натуральных тканей — чтобы тело дышало</li>
+                            <li>Возьми запасную сменную одежду на случай дождя или перепадов температуры</li>
+                            <li>Не забудь личные гигиенические средства</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="rt-subtitle" style="text-align:center;">🔰 Главное</h3>
+            <p class="rt-text">Мы идём встречать Огонь и Стихии. Нас ждут прохлада вершин, жар костра, ледяная вода и тепло внутреннего огня.</p>
+            <p class="rt-text">Всё, что мы берём с собой, — служит нашему телу, чтобы дух оставался свободным и лёгким.</p>
+            <p class="rt-quote">До встречи в сердце Иремеля!<br>Ждём тебя. 🔥</p>
+        </div>
+    </section>
+
+    <!-- ===== Блок 2: Баня на ретрите ===== -->
+    <section class="ural-block">
+        <div class="container">
+            <span class="ural-block-label">Ритуал</span>
+            <h2 class="ural-block-title">Баня на ретрите</h2>
+
+            <p class="rt-quote">Четыре раза — четыре состояния</p>
+
+            <p class="rt-text">Баня здесь — не просто развлечение. Это часть пути. Встреча с жаром, с телом, с собой. Мы входим в парную четыре раза. И каждый раз — по-новому.</p>
+
+            <div class="amenities">
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence21.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Первая баня (в первый день)</h3>
+                        <p>После дороги, после первых знакомств, после того как дыхание выровнялось — мы встречаемся с теплом.</p>
+                        <p>Оно не торопит. Оно согревает тело, которое давно забыло, что такое мягкость. Напряжение тает. Ты выдыхаешь впервые по-настоящему.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence22.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Вторая и третья баня</h3>
+                        <p>🤩 Тело уже помнит жар. Оно доверяет.</p>
+                        <p>Здесь мы добавляем соль. Крупная, живая, сухая — она ложится на разогретую кожу и начинает свой диалог с тобой. Соль вбирает всё, что держалось в мышцах годами: усталость, напряжение, чужие голоса, старые сценарии. Она очищает не тело — она освобождает пространство внутри.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence23.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <p>🤩 После соли — приходит время масел. Горячие, ароматные, живые. С нотами трав, цветов и земли. Они проникают глубоко — туда, где живёт уставшая душа. Они возвращают коже эластичность, телу — память о жизни, а тебе — ощущение, что о тебе заботятся.</p>
+                        <p>Мастер работает руками в такт твоему дыханию. Каждое движение — как разговор. Глубокий. Честный. Без лишних слов.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence24.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Четвёртая баня (после восхождения на гору Иремель)</h3>
+                        <p>Завершающая.</p>
+                        <p>🤩 Тело уже прошло путь: расслабление, выдыхание, соль убрала лишнее, масло наполнило новым.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence25.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <p>В четвёртый раз ты входишь не за очищением — ты входишь за состоянием. Когда внутри тихо. Когда тело лёгкое. Когда ты чувствуешь себя целым. А после — не просто чистота, а Состояние.</p>
+                        <p>🤩 Ты выходишь из бани другим. Не потому что тебя «очистили». А потому что ты разрешил себе быть.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="rt-quote">Баня на ретрите — это не процедура.<br>Это встреча с собой.<br>Четыре раза. Четыре шага.<br>Одно возвращение.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container" style="max-width:900px;">
+            <h2>Готовы собраться в дорогу?</h2>
+            <p>Если остались вопросы о проживании, питании или списке вещей — напишите нам напрямую, мы подскажем всё, что нужно перед поездкой.</p>
+            <div class="cta-actions">
+                <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">Написать</a>
+                <div class="cta-call">
+                    <span>Или позвонить</span>
+                    <a href="tel:+79173482348">+7 917 348-23-48</a>
+                    <a href="tel:+79174134182">+7 917 413-41-82</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Вставка подвала сайта перед скриптами (с текстом внутри HTML) -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <!-- Личка (самолетик) -->
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                
+                <!-- КАНАЛ (Громкоговоритель/Новости) -->
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
+                    <i class="fas fa-bullhorn"></i>
+                </a>                
+                
+                <a href="https://whatsapp.com/dl/" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/sitdikova_ilvera" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:ilvera69@mail.ru" class="social-link mail" title="E-mail"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+79173482348" class="social-link phone" title="Позвонить: +7 917 348-23-48"><i class="fas fa-phone"></i></a>
+                <a href="tel:+79174134182" class="social-link phone" title="Позвонить: +7 917 413-41-82"><i class="fas fa-phone"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOJS7diLaHgIue6mxa4Qjx1kaxz4WjEKQkUqwhomlWcYtCnDxpA" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
+                <a href="https://vk.ru/id177739125" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="https://youtube.com/@mommy_dragon?si=_bSPuVhnY9Qzcek5" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <p>&copy; 2026 Пространство практик и трансформации «Ретриты». Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
