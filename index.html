@@ -166,12 +166,23 @@
             margin-top: 28px;
         }
 
+        .hero-btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
         .hero-call {
             display: flex;
             flex-direction: column;
             gap: 2px;
             font-size: 0.85rem;
             color: var(--text-muted);
+            align-items: center;
+            text-align: center;
+            flex-basis: 100%; 
         }
 
         .hero-call span {
@@ -239,6 +250,7 @@
             letter-spacing: 1px;
             font-size: 0.9rem;
             border: 1px solid var(--primary-color);
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -1172,8 +1184,10 @@
                         </div>
 
                         <div class="hero-buttons">
-                            <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
-                            <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">ЗАПИСАТЬСЯ</a>
+                            <div class="hero-btn-group">
+                                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
+                                <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">ЗАПИСАТЬСЯ</a>
+                            </div>
                             <div class="hero-call">
                                 <span>Или позвонить</span>
                                 <a href="tel:+79173482348">+7 917 348-23-48</a>
@@ -1298,7 +1312,7 @@
                 <div class="results-card">
                     <h2 class="results-title">Даты</h2>
                     <ul class="results-list">
-                        <li>С 23 по 30 августа 2026г.</li>
+                        <li>С 23 по 30 августа 2026г. (осталось несколько мест, скидка обговаривается индивидуально)</li>
                         <li>С 01 по 08 сентября 2026г.</li>
                         <li>С 20 по 28 сентября 2026г.</li>
                     </ul>
@@ -1308,9 +1322,8 @@
                     <h2 class="results-title">Цены</h2>
                     <ul class="results-list">
                         <li>Стандартная цена - 141'000 руб.</li>
-                        <li>10% невозвартный аванс чтобы забронировать участие в ретрите</li>
+                        <li>Успей забронировать за собой место на участие в ретрите, внеси 10%</li>
                         <li>Внеси 35'000 руб. до 20.08.2026 г. и успей забронировать по вкусной цене - 113'600 руб.</li>
-                        <!-- <li>успей забронировать по вкусной цене - 113'600 руб.</li> -->
                     </ul>
                 </div>
             </div>
@@ -1322,6 +1335,7 @@
             <h2>Добро пожаловать в свой огонь</h2>
             <p>Позвольте себе сгореть, чтобы возродиться.</p>
             <div class="cta-actions">
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
                 <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">Записаться</a>
                 <div class="cta-call">
                     <span>Или позвонить</span>
