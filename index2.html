@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Совместное представление трех мастеров: направления, опыт и возможность выбрать близкий формат работы.">
+    <title>Ретриты | Пространство практик и трансформации</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <style>
+        :root {
+            --primary-color: #4A3B5E;
+            --accent-color: #C5A880;
+            --bg-light: #F9F7F5;
+            --text-dark: #2D2D2D;
+            --text-muted: #66615f;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .masters-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 30px 0 40px;
+            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+        }
+
+        .hero-top {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .hero-top .whats-included {
+            background: transparent;
+            padding: 0;
+        }
+
+        .hero-top .whats-included .results-title {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero-top .included-list {
+            margin-bottom: 30px;
+        }
+
+
+        .hero-subtitle {
+            display: block;
+            margin-bottom: 18px;
+            color: #8B6B3D;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            /* font-size: 28px; */
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        h1 {
+            max-width: 760px;
+            margin: 0 auto 8px;
+            color: var(--primary-color);
+            font-size: 44px;
+            line-height: 1.15;
+        }
+
+        .hero-lead {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            font-size: 1.12rem;
+            color: #555;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hero-badge {
+            background: #fff;
+            padding: 10px 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            color: #777;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 50px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        .hero-description b {
+            color: var(--primary-color);
+            font-weight: 700;
+            display: block;
+            margin-top: 10px;
+        }
+
+
+        .hero-transition {
+            max-width: 640px;
+            margin: 0 auto 28px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--primary-color);
+            position: relative;
+            padding-top: 26px;
+        }
+
+        .hero-transition::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        .hero-call {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            align-items: center;
+            text-align: center;
+            flex-basis: 100%; 
+        }
+
+        .hero-call span {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            color: #8B6B3D;
+            font-weight: 600;
+        }
+
+        .hero-call a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero-call a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .hero-flex-text {
+            flex: 1 1 50%;
+            min-width: 0;
+        }
+
+        .hero-flex-text .hero-description {
+            margin-bottom: 22px;
+        }
+
+        .hero-photo-wrap {
+            flex: 1 1 42%;
+            max-width: 380px;
+            aspect-ratio: 1169 / 1280;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .hero-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* ---------- Цитата-тизер про огонь + видео ---------- */
+        .fire-media-row {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+            margin: 0 auto 34px;
+            text-align: left;
+        }
+
+        .fire-video-wrap {
+            flex: 1 1 42%;
+            max-width: 380px;
+            aspect-ratio: 1169 / 1280;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+            background: #000;
+        }
+
+        .fire-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fire-quote {
+            flex: 1 1 50%;
+            margin: 0;
+            text-align: left;
+            padding: 28px 32px;
+            background: linear-gradient(135deg, rgba(197, 168, 128, 0.1), rgba(74, 59, 94, 0.05));
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            border-radius: 16px;
+        }
+
+        .fire-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.28rem;
+            line-height: 1.5;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .fire-quote-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #8B6B3D;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .fire-quote-link:hover {
+            border-color: #8B6B3D;
+        }
+
+        @media (max-width: 700px) {
+            .fire-media-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .fire-video-wrap {
+                max-width: none;
+                width: 100%;
+                aspect-ratio: 16 / 10;
+            }
+
+            .fire-quote {
+                text-align: center;
+                width: 100%;
+                padding: 26px 24px;
+            }
+        }
+
+        /* ---------- Карточки-навигация по разделам ---------- */
+        .nav-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 54px 0 10px;
+        }
+
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 30px 32px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .nav-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .nav-card-arrow {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .nav-card-featured {
+            background: linear-gradient(135deg, var(--primary-color), #5c4a73);
+            color: #fff;
+        }
+
+        .nav-card-featured h3 {
+            color: #fff;
+            font-size: 1.7rem;
+            margin: 4px 0 10px;
+        }
+
+        .nav-card-featured p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            max-width: 540px;
+            margin-bottom: 18px;
+        }
+
+        .nav-card-featured .nav-card-arrow {
+            color: var(--accent-color);
+        }
+
+        .nav-cards-secondary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .nav-card-small {
+            background: #fff;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-card-small h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 2px 0 8px;
+        }
+
+        .nav-card-small p {
+            color: #555;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        .nav-card-small .nav-card-arrow {
+            color: #8B6B3D;
+        }
+
+        @media (max-width: 600px) {
+            .nav-cards-secondary {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-card {
+                padding: 24px 24px;
+            }
+        }
+
+        /* ---------- Что входит в ретрит ---------- */
+        .whats-included {
+            padding: 64px 0 10px;
+            background-color: #fff;
+        }
+
+        .whats-included .results-title {
+            text-align: center;
+        }
+
+        .included-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .included-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: #444;
+            background: var(--bg-light);
+            padding: 16px 18px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-color);
+            line-height: 1.4;
+        }
+
+        .included-list li span {
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 700px) {
+            .included-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- Финальный CTA перед футером ---------- */
+        .final-cta {
+            padding: 70px 0 90px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            color: var(--primary-color);
+            margin-bottom: 14px;
+        }
+
+        .final-cta p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 28px;
+        }
+
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            align-items: stretch;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .master-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            overflow: hidden;
+            border-top: 3px solid var(--accent-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+
+        .master-photo {
+            position: relative;
+            aspect-ratio: 1 / 1.05;
+            background: #eee8e1;
+        }
+
+        .master-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.35) 100%);
+            pointer-events: none;
+        }
+
+        .master-photo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .master-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            padding: 14px 14px 16px;
+        }
+
+        .master-content h2 {
+            color: #8B6B3D;
+            font-size: 1.08rem;
+            line-height: 1.1;
+        }
+
+        .master-teaser {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.38;
+        }
+
+        .master-role {
+            color: #8B6B3D;
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .master-description {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.42;
+        }
+
+        .master-points {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .master-points li {
+            position: relative;
+            margin-bottom: 5px;
+            padding-left: 18px;
+            color: #444;
+            font-size: 0.73rem;
+            line-height: 1.35;
+        }
+
+        .master-points li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 1120px) {
+            .masters-hero {
+                background:
+                    linear-gradient(135deg, rgba(253, 251, 251, 0.98) 0%, rgba(235, 237, 238, 0.98) 100%);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .masters-hero {
+                min-height: auto;
+            }
+
+
+            .masters-grid {
+                grid-template-columns: 1fr;
+                max-width: 560px;
+                gap: 16px;
+            }
+
+            .master-card {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .master-photo {
+                aspect-ratio: 1 / 1.02;
+                min-height: 0;
+            }
+
+            .hero-flex {
+                gap: 24px;
+            }
+
+            .hero-photo-wrap {
+                max-width: 320px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero-flex {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .hero-photo-wrap {
+                order: -1;
+                width: 100%;
+                max-width: none;
+                aspect-ratio: 1169 / 1280;
+                max-height: 420px;
+            }
+
+            .hero-flex-text {
+                width: 100%;
+            }
+
+            .hero-flex-text .hero-description {
+                margin-bottom: 18px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .masters-hero {
+                padding: 14px 0 16px;
+                align-items: flex-start;
+            }
+
+            .hero-top {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 5px;
+            }
+
+            .hero-subtitle {
+                margin-bottom: 10px;
+                font-size: 1.4375rem;
+            }
+
+            .hero-transition {
+                font-size: 1.4375rem; /* 23px */
+            }
+
+            .lead {
+                display: none;
+            }
+
+            .masters-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                max-width: none;
+            }
+
+            .master-card {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                min-height: 0;
+                background: #fff;
+            }
+
+            .master-photo {
+                aspect-ratio: 1 / 1.08;
+                max-height: none;
+            }
+
+            .master-content {
+                position: static;
+                padding: 12px 12px 14px;
+                gap: 5px;
+                min-width: 0;
+                color: inherit;
+                background: #fff;
+            }
+
+            .master-content h2 {
+                font-size: 1rem;
+                color: #8B6B3D;
+            }
+
+            .master-role {
+                font-size: 0.54rem;
+                letter-spacing: 0.4px;
+                color: #8B6B3D;
+            }
+
+            .master-description {
+                font-size: 0.74rem;
+                line-height: 1.34;
+                color: var(--text-muted);
+            }
+            
+            .master-points li {
+                font-size: 0.75rem;
+            }
+        }
+
+        .results-section {
+            padding: 70px 0 90px;
+            background-color: #fff;
+        }
+
+        .results-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            color: var(--primary-color);
+            margin-bottom: 18px;
+        }
+
+        .results-list {
+            list-style: none;
+        }
+
+        .results-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .results-list li::before {
+            content: "✦";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .results-block {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 30px;
+        }
+
+        .results-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .results-card {
+            background: var(--bg-light);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 36px 34px;
+            box-shadow: 0 10px 26px rgba(74, 59, 94, 0.06);
+        }
+
+        .results-card .results-title {
+            margin-bottom: 20px;
+        }
+
+        .results-card .results-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .master-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: rgba(22, 18, 14, 0.72);
+            backdrop-filter: blur(6px);
+        }
+
+        .master-modal.active {
+            display: flex;
+        }
+
+        .master-modal-dialog {
+            width: min(920px, 100%);
+            max-height: min(90vh, 920px);
+            overflow: hidden;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .master-modal-topbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: center;
+            padding: 16px 18px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .master-modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .master-modal-close {
+            border: 0;
+            background: transparent;
+            color: #666;
+            font-size: 1.8rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 2px 6px;
+        }
+
+        .master-modal-body {
+            display: grid;
+            grid-template-columns: minmax(280px, 34vw) 1fr;
+            min-height: 0;
+            flex: 1;
+            align-items: start;
+        }
+
+        .master-modal-photo-wrap {
+            padding: 16px 0 0 16px;
+            background: #fff;
+            align-self: start;
+            display: flex;
+        }
+
+        .master-modal-photo {
+            width: 100%;
+            height: auto;
+            max-height: calc(90vh - 110px);
+            object-fit: contain;
+            object-position: top center;
+            display: block;
+            background: #eee8e1;
+            border-radius: 14px;
+            position: sticky;
+            top: 16px;
+        }
+
+        .master-modal-content {
+            padding: 20px 22px 60px 18px;
+            overflow-y: auto;
+            min-height: 0;
+            max-height: 100%;
+            box-sizing: border-box;
+        }
+
+        .master-modal-content::after {
+            content: "";
+            display: block;
+            height: 20px;
+        }
+
+        .master-modal-text {
+            color: #4a4a4a;
+            font-size: 1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        @media (max-width: 900px) {
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-call {
+                align-items: center;
+                text-align: center;
+            }
+            .hero-badges {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .results-block { border-left: none; padding-left: 0; }
+            .results-cards { grid-template-columns: 1fr; gap: 18px; }
+            .results-card { padding: 28px 24px; }
+            .results-list li { font-size: 1rem; }
+            .hero-description {
+                border-left: none;
+                padding-left: 0;
+                text-align: left;
+            }
+
+            .master-modal {
+                height: 100dvh;
+                padding: 10px;
+                align-items: stretch;
+                justify-content: flex-start;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .master-modal.active {
+                display: block;
+            }
+
+            .master-modal-dialog {
+                width: 100%;
+                max-height: none;
+                overflow: visible;
+                margin: 0 auto 10px;
+                display: block;
+            }
+
+            .master-modal-body {
+                display: block;
+                min-height: 0;
+            }
+
+            .master-modal-photo-wrap {
+                padding: 12px 12px 0;
+                display: block;
+            }
+
+            .master-modal-photo {
+                width: 100%;
+                height: auto;
+                min-height: 240px;
+                max-height: 46dvh;
+                position: static;
+                border-radius: 12px;
+            }
+
+            .master-modal-content {
+                padding: 16px 16px 60px;
+                overflow: visible;
+                max-height: none;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .master-modal {
+                padding: 8px;
+            }
+
+            .master-modal-dialog {
+                margin: 0 auto;
+            }
+
+            .master-modal-topbar {
+                padding: 14px 14px 12px;
+            }
+
+            .master-modal-body {
+                display: block;
+            }
+
+            .master-modal-photo-wrap {
+                padding: 10px 10px 0;
+            }
+
+            .master-modal-photo {
+                width: 100%;
+                height: auto;
+                min-height: 180px;
+                max-height: 48vh;
+                position: static;
+                border-radius: 12px;
+            }
+
+            .master-modal-content {
+                padding: 12px 14px 16px;
+            }
+
+            .master-modal-text {
+                font-size: 0.95rem;
+                line-height: 1.55;
+            }
+        }
+
+        /* ---------- CTA ---------- */
+        .cta-section { padding: 70px 0 90px; text-align: center; }
+        .cta-section h2 { margin-bottom: 16px; }
+
+        .cta-section p {
+            max-width: 560px;
+            margin: 0 auto 30px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-call {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .cta-call span {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            color: #8B6B3D;
+            font-weight: 600;
+        }
+
+        .cta-call a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cta-call a:hover { text-decoration: underline; }
+
+        .section-cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 28px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover { background-color: transparent; color: var(--primary-color); }
+
+
+
+        /* --- Фирменный Footer на основе вашего CSS --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #333;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Контейнер соцсетей */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Круглые кнопки иконок */
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Анимация при наведении */
+        .social-link:hover { 
+            transform: translateY(-5px); 
+            color: #fff;
+        }
+        
+        /* Единый акцентный hover в фирменной палитре */
+        .social-link.tg:hover,
+        .social-link.wa:hover,
+        .social-link.inst:hover,
+        .social-link.vk:hover,
+        .social-link.yt:hover,
+        .social-link.phone:hover,
+        .social-link.mail:hover { background: var(--accent-color); color: #2D2D2D; }
+
+        /* Кнопка MAX */
+        .social-link.max { background: #20232a; border: 1px solid #3a3f4b; }
+        .social-link.max:hover { background: var(--accent-color); }
+        .social-link.max:hover .max-icon { color: #2D2D2D; }
+        
+        .max-icon {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1;
+        }
+
+        /* ================================================== */
+        /* ===== Новые блоки: Для кого / 7 дней / Место / Отзывы ===== */
+        /* ================================================== */
+
+        .block-title {
+            display: block;
+            text-align: center;
+            margin: 0 auto 30px;
+            color: #8B6B3D;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .content-section { padding: 64px 0; }
+        .content-section.bg-white { background-color: #fff; }
+
+        /* ---- Блок "Для кого" ---- */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .who-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 22px 24px;
+        }
+
+        .content-section.bg-white .who-card { background: var(--bg-light); }
+
+        .who-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .who-card p {
+            font-size: 0.94rem;
+            color: #555;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 760px) {
+            .who-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- Блок "Что произойдёт за 7 дней" ---- */
+        .transform-list {
+            list-style: none;
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .transform-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .transform-num {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transform-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .transform-item p {
+            font-size: 0.98rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ---- Блок "Что уходит / Что приходит" ---- */
+        .shift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .shift-card {
+            position: relative;
+            background: var(--bg-light);
+            border-radius: 18px;
+            padding: 34px 34px 34px 42px;
+        }
+
+        .shift-card::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 12px;
+            bottom: 12px;
+            width: 6px;
+            border-radius: 999px;
+        }
+
+        .shift-out::before { background: #9C8DAE; }
+        .shift-in::before { background: var(--accent-color); }
+
+        .shift-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 22px;
+        }
+
+        .shift-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .shift-list li {
+            position: relative;
+            padding-left: 24px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .shift-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 760px) {
+            .shift-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- Блок "Место проведения" ---- */
+        .venue-text {
+            max-width: 720px;
+            margin: 0 auto 10px;
+            text-align: center;
+        }
+
+        .venue-text p {
+            font-size: 1.02rem;
+            color: #444;
+            margin-bottom: 14px;
+            line-height: 1.65;
+        }
+
+        .venue-text p:last-child { margin-bottom: 0; }
+
+        .venue-text a {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .venue-text a:hover { color: #8B6B3D; }
+
+        .venue-lede {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-color) !important;
+        }
+
+        .map-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: #fff;
+            border: 1px solid rgba(74, 59, 94, 0.15);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .map-link:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+
+        .venue-map-label {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 34px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        /* ---- Карусель (переиспользуется для "Ural" и "reviews") ---- */
+        .carousel {
+            position: relative;
+            margin: 34px auto 0;
+            max-width: 860px;
+        }
+
+        .carousel-viewport {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            scroll-behavior: smooth;
+            border-radius: 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            box-shadow: 0 14px 30px rgba(74, 59, 94, 0.12);
+        }
+
+        .carousel-viewport::-webkit-scrollbar { display: none; }
+
+        .carousel-track { display: flex; width: 100%; }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            aspect-ratio: 16 / 10;
+            background: #eee8e1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            color: var(--primary-color);
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-arrow:hover { background: var(--primary-color); color: #fff; }
+        .carousel-arrow.prev { left: -20px; }
+        .carousel-arrow.next { right: -20px; }
+
+        .carousel-empty {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 50px 20px;
+            font-size: 0.92rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .carousel-arrow.prev { left: 6px; }
+            .carousel-arrow.next { right: 6px; }
+        }
+
+        @media (max-width: 640px) {
+            .carousel-arrow { width: 38px; height: 38px; }
+            .carousel-slide { aspect-ratio: 4 / 5; }
+        }
+    </style>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111627368', 'ym');
+
+        ym(111627368, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/111627368" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <main class="masters-hero">
+        <div class="container">
+            <div class="hero-top">
+                <h1>🔥 Огненный ретрит</h1>
+                <span class="hero-subtitle">Перерождение Огнём</span>
+                <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
+
+                <section class="whats-included">
+                    <h2 class="results-title">Что будет на ретрите</h2>
+                    <ul class="included-list">
+                        <li><span>🔥</span> Трансформационный огненный массаж-инициация 3-4 часа, несколько дней</li>
+                        <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
+                        <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
+                        <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
+                        <li><span>🌅</span> Утренние медитации на рассвете</li>
+                        <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
+                    </ul>
+
+                </section>
+
+            </div>
+
+            <div class="section-cta">
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Присоединиться
+                </a>
+            </div>
+
+            <div class="hero-transition">
+                Проводники к твоей истинной сути
+            </div>
+
+            <section class="masters-grid" aria-label="Мастера">
+                <article class="master-card">
+                    <div class="master-photo">
+                        <img src="media/persons/person_11.jpeg" alt="Фото мастера 1" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
+                    </div>
+                    <div class="master-content">
+                        <span class="master-role">Проводник</span>
+                        <h2>Инна Шульгина</h2>
+                        <p class="master-teaser">Проводник к твоей истинной сути.</p>
+                        <ul class="master-points">
+                            <li>Огненный ритуал массаж</li>
+                            <li>Энерготерапевт</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="master-card">
+                    <div class="master-photo">
+                        <img src="media/persons/person_21.jpeg" alt="Фото мастера 2" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
+                    </div>
+                    <div class="master-content">
+                        <span class="master-role">Архитектор</span>
+                        <h2>Ильвера Ситдикова</h2>
+                        <p class="master-teaser">Архитектор внутренней трансформации.</p>
+                        <ul class="master-points">
+                            <li>Авторские ретриты</li>
+                            <li>Работа с силой рода</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </section>
+
+            <div class="section-cta">
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Присоединиться
+                </a>
+            </div>
+
+            <!-- ===== Блок: Для кого этот ретрит будет ценен ===== -->
+            <section class="content-section bg-white">
+                <div class="container">
+                    <h2 class="block-title">Для кого этот ретрит будет ценен</h2>
+
+                    <div class="who-grid">
+                        <div class="who-card">
+                            <h3>Для тех, кто устал быть «сильным»</h3>
+                            <p>Кто привык всё тащить на себе — бизнес, семью, команды, чужие ожидания. Кто боится остановиться, потому что кажется: «рухнет всё». Здесь вы получите легальное разрешение сдаться и увидите, что мир не разрушается, когда вы перестаёте контролировать.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, чьё тело кричит</h3>
+                            <p>У кого хронические зажимы, психосоматика, аутоиммунные процессы, постоянная усталость. Кто уже понял, что таблетки не лечат причину. Здесь вы услышите свой организм иначе и дадите ему новый сценарий — без войны с собой.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто застрял в духовном поиске</h3>
+                            <p>Кто прошёл десятки практик, медитаций и ретритов, но так и не научился жить эту магию в реальном мире — в деньгах, теле, отношениях. Здесь вы заземлите своё «небесное» и начнёте воплощать его в материи.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто потерял себя в тени партнёра</h3>
+                            <p>Кто всю жизнь был «вторым номером», поддерживал, жертвовал, растворялся в успешном супруге. Кто боится, что без него — никто. Здесь вы вернёте себе свой голос, свою силу и своё место в этом мире.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто лечит/учит других, но сам разваливается</h3>
+                            <p>Психологи, врачи, коучи, массажисты, телесные терапевты. Кто годами «держит» клиентов, но не имеет безопасного пространства, чтобы побыть просто человеком. Здесь вы пройдёте супервизию тела и станете другим специалистом — более целостным и проводящим.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто несёт груз рода</h3>
+                            <p>Кто вырос в дисфункциональной семье, кто привык выживать, спасать, быть «удобным» или «отличником». Кто чувствует, что живёт не свою жизнь, а повторяет судьбу родителей. Здесь вы символически завершите родовые сценарии и начнёте собственную историю рода.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Присоединиться</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Что произойдёт за 7 дней ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Что произойдёт за 7 дней ретрита</h2>
+
+                    <ul class="transform-list">
+                        <li class="transform-item">
+                            <span class="transform-num">1</span>
+                            <div>
+                                <h3>Вы переживёте «перерождение»</h3>
+                                <p>Через огонь, соль, дыхание и телесные практики вы встретитесь с самым глубоким страхом. Страхом смерти. Не в голове — в каждой клетке. И на выходе выйдете за пределы того, кем вы себя считали. Это не метафора — это физический опыт тотальной сдачи.</p>
+                            </div>
+                        </li>
+                        <li class="transform-item">
+                            <span class="transform-num">2</span>
+                            <div>
+                                <h3>Ваше тело получит новый сценарий</h3>
+                                <p>Спазмы, блоки, зажимы, годами хранившие старые программы — начнут отпускать. Вы перестанете воевать с телом и начнёте слышать его как союзника. Энергия, которая уходила на удержание контроля, вернётся в вашу жизнь.</p>
+                            </div>
+                        </li>
+                        <li class="transform-item">
+                            <span class="transform-num">3</span>
+                            <div>
+                                <h3>Вы вернёте себе внутреннюю опору</h3>
+                                <p>Вместо «надо» и «должна» — «я выбираю». Вместо страха рухнуть — спокойствие и доверие к миру. Вы перестанете искать себя вовне (в достижениях, деньгах, одобрении других) и впервые почувствуете: вы есть. И этого достаточно. Навсегда.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="shift-grid">
+                        <div class="shift-card shift-out">
+                            <h3>Что уходит?</h3>
+                            <ul class="shift-list">
+                                <li>Глубокие эмоциональные травмы</li>
+                                <li>Напряжение, ставшее привычным</li>
+                                <li>Тревога, которая стала фоном жизни</li>
+                                <li>Старые сценарии и чужие роли</li>
+                            </ul>
+                        </div>
+                        <div class="shift-card shift-in">
+                            <h3>Что приходит?</h3>
+                            <ul class="shift-list">
+                                <li>Внутренний баланс</li>
+                                <li>Устойчивость</li>
+                                <li>Опора, которую никто не может поколебать</li>
+                                <li>Осознанность</li>
+                                <li>Уверенность, рождённая не из головы, а из самой глубины</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Присоединиться</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Место проведения ===== -->
+            <section class="content-section bg-white">
+                <div class="container">
+                    <h2 class="block-title">Место проведения</h2>
+
+                    <div class="venue-text">
+                        <p><a href="yuzhny-ural.html">Южный Урал</a>. У подножия гор — Батюшка Иремель и Матушка Зигальга.</p>
+                        <p>В сердце величественных гор, среди чистых рек и тишины природы вас ждёт пространство, где можно остановиться, выдохнуть и вернуться к себе настоящему.</p>
+                        <p class="venue-lede">Здесь время замедляется… чтобы вы наконец услышали себя</p>
+                    </div>
+
+                    <div class="carousel" data-carousel data-folder="media/Ural" data-alt="Южный Урал">
+                        <button class="carousel-arrow prev" aria-label="Предыдущее фото" type="button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track"></div>
+                        </div>
+                        <button class="carousel-arrow next" aria-label="Следующее фото" type="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <p class="venue-map-label">Место проведения:</p>
+                    <div class="map-links">
+                        <a href="https://maps.app.goo.gl/9ETzTrZQM6b8ojhx8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                        <a href="https://yandex.ru/maps/-/CTWjnQZB" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> Яндекс Карты</a>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Присоединиться</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Отзывы о работе проводников ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Отзывы о работе проводников</h2>
+
+                    <div class="carousel" data-carousel data-folder="media/reviews" data-alt="Отзыв клиента">
+                        <button class="carousel-arrow prev" aria-label="Предыдущий отзыв" type="button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track"></div>
+                        </div>
+                        <button class="carousel-arrow next" aria-label="Следующий отзыв" type="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Присоединиться</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Добро пожаловать в свой огонь</h2>
+            <p>Позвольте себе сгореть, чтобы возродиться.</p>
+            <div class="cta-actions">
+                <a href="programma.html" class="btn">
+                    ПРОГРАММА
+                </a>
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
+                <a href="https://t.me/ILVERA69" class="btn-outline" target="_blank" rel="noopener noreferrer">Записаться</a>
+                <div class="cta-call">
+                    <span>Или позвонить</span>
+                    <a href="tel:+79173482348">+7 917 348-23-48</a>
+                    <a href="tel:+79174134182">+7 917 413-41-82</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="master-modal" id="masterModal" aria-hidden="true">
+        <div class="master-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="masterModalTitle">
+            <div class="master-modal-topbar">
+                <div class="master-modal-title" id="masterModalTitle">Мастер</div>
+                <button type="button" class="master-modal-close" id="masterModalClose" aria-label="Закрыть">&times;</button>
+            </div>
+            <div class="master-modal-body">
+                <div class="master-modal-photo-wrap">
+                    <img src="" alt="" class="master-modal-photo" id="masterModalPhoto">
+                </div>
+                <div class="master-modal-content">
+                    <div class="master-modal-text" id="masterModalText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Вставка подвала сайта перед скриптами (с текстом внутри HTML) -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <!-- Личка (самолетик) -->
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                
+                <!-- КАНАЛ (Громкоговоритель/Новости) -->
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
+                    <i class="fas fa-bullhorn"></i>
+                </a>                
+                
+                <a href="https://whatsapp.com/dl/" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/sitdikova_ilvera" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:ilvera69@mail.ru" class="social-link mail" title="E-mail"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+79173482348" class="social-link phone" title="Позвонить: +7 917 348-23-48"><i class="fas fa-phone"></i></a>
+                <a href="tel:+79174134182" class="social-link phone" title="Позвонить: +7 917 413-41-82"><i class="fas fa-phone"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOJS7diLaHgIue6mxa4Qjx1kaxz4WjEKQkUqwhomlWcYtCnDxpA" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
+                <a href="https://vk.ru/id177739125" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="https://youtube.com/@mommy_dragon?si=_bSPuVhnY9Qzcek5" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <p>&copy; 2026 Пространство практик и трансформации «Ретриты». Все права защищены.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const masterData = {
+            person_1: {
+                title: 'Инна Шульгина',
+                photo: 'media/persons/person_11.jpeg',
+                text: `Проводник к твоей истинной сути.
+Я не просто прикасаюсь к телу - я касаюсь твоей истории. 
+
+Целитель. Трансформационный коуч. Твоя проводница в мир, где стихии встречаются с сознанием, а body становится картой, по которой я читаю твой путь. В моей палитре - кашмирский и тантрический массаж, мистерии огня, тонкие настройки Access Bars и целительная сила Карсай Ци.
+
+☘️Моя философия за пределами любых инструкций.
+Я не работаю по протоколам. Для меня нет шаблонов, есть только ты - живая, вибрирующая, уникальная. Мои руки - это лишь проводник. Я настраиваюсь на частоту твоего сердца, считывая то, о чем молчит голос, но кричит душа. Я вижу тени прошлого и искры потенциала там, где другие видят лишь кожу☘️
+
+Искусство создавать момент.
+Каждая сессия со мной - это персональный код, написанный «здесь и сейчас». Я смешиваю техники, как алхимик создает эликсир: беру концентрат самых мощных практик и сплетаю их в единую ткань твоего исцеления. Мои руки не просто массируют - они «видят», проникая в глубину, где дремлет твоя истинная сила.
+
+🦋Моя миссия - не расслабление. Моя миссия - перерождение.
+Я не пришла, чтобы просто стереть следы усталости. Я пришла, чтобы провести тебя через очищающий огонь. Чтобы всё, что было «наносным» - страхи, старые роли, чужие ожидания - превратилось в пепел. 
+
+Мы идем в глубину, чтобы ты могла сбросить кожу, отпустить лишнее и наконец-то встретиться с тем, кто ты есть на самом деле
+Приди, чтобы сгореть. И вернись, чтобы воскреснуть 💜`
+            },
+            person_2: {
+                title: 'Ильвера Ситдикова',
+                photo: 'media/persons/person_21.jpeg',
+                text: `Архитектор внутренней трансформации.
+
+💜Для людей, которые достигли внешнего успеха и готовы открыть следующий уровень себя.
+Авторские ретриты.
+Дыхательные практики.
+Работа с телом, сознанием и глубинными ресурсами рода.
+
+«Я создаю пространство, где человек возвращается к себе после гонки за достижениями».
+
+ЕСЛИ ТЫ ЧУВСТВУЕШЬ:
+
+➖потеря контакта с собой
+➖усталость;
+➖пустота;
+➖ощущение «я всё имею, но чего-то не хватает».
+➖не возможность расслабиться
+
+У ТЕБЯ "ЗАШКАЛИВАЕТ":
+
+🔴 контроль;
+🔴 ответственность;
+🔴 одидания от тебя решений
+🔴 напряжение.
+
+Переключись из режима достижения в состояние присутствия. Выбери себя и желание достичь следующего уровня, у тебя появится: 
+
+» осознанность
+» энергия
+⏩ внутренняя сила
+⏩ улучшится качество жизни
+
+Мы ни просто 
+«работаем с родом, а 
+
+Выявляем, какие ресурсы и ограничения были переданы вам поколениями, и выбрать: что вы понесёте дальше
+кто я в истории семьи;
+что я создаю для следующих поколений;
+какое наследие оставлю.
+
+💜 Мои ретриты — пространство возвращения к себе.
+💜 Через дыхание, тело и глубинную работу сознания вы освобождаетесь от старых сценариев и открываете состояние внутренней силы, которое невозможно купить — его можно только прожить 💜`
+            }
+        };
+
+        const masterCards = document.querySelectorAll('.master-card');
+        const masterModal = document.getElementById('masterModal');
+        const masterModalTitle = document.getElementById('masterModalTitle');
+        const masterModalPhoto = document.getElementById('masterModalPhoto');
+        const masterModalText = document.getElementById('masterModalText');
+        const masterModalClose = document.getElementById('masterModalClose');
+
+        function openMasterModal(key) {
+            const data = masterData[key];
+            if (!data) return;
+            masterModalTitle.textContent = data.title;
+            masterModalPhoto.src = data.photo;
+            masterModalPhoto.alt = data.title;
+            masterModalText.textContent = data.text;
+            masterModal.classList.add('active');
+            masterModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMasterModal() {
+            masterModal.classList.remove('active');
+            masterModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        masterCards.forEach((card, index) => {
+            const key = `person_${index + 1}`;
+            card.addEventListener('click', () => openMasterModal(key));
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openMasterModal(key);
+                }
+            });
+        });
+
+        masterModalClose.addEventListener('click', closeMasterModal);
+        masterModal.addEventListener('click', (event) => {
+            if (event.target === masterModal) closeMasterModal();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && masterModal.classList.contains('active')) {
+                closeMasterModal();
+            }
+        });
+    </script>
+
+    <!-- ===== Автозагрузка и логика каруселей (Южный Урал / Отзывы) ===== -->
+    <script>
+        (function () {
+            function testImage(src) {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => resolve(true);
+                    img.onerror = () => resolve(false);
+                    img.src = src;
+                });
+            }
+
+            // Фото должны называться 1.jpg, 2.jpg, 3.jpg ... (или .jpeg/.png/.webp),
+            // по порядку, без пропусков номеров — загрузка идёт, пока не встретится «дыра».
+            async function loadSequentialImages(folder, max) {
+                const extensions = ['jpeg', 'JPEG', 'jpg', 'JPG', 'png', 'webp'];
+                const found = [];
+                for (let i = 1; i <= max; i++) {
+                    let hit = null;
+                    for (const ext of extensions) {
+                        const path = folder + '/' + i + '.' + ext;
+                        if (await testImage(path)) { hit = path; break; }
+                    }
+                    if (hit) { found.push(hit); } else { break; }
+                }
+                return found;
+            }
+
+            function buildSlides(track, images, altPrefix) {
+                track.innerHTML = '';
+                images.forEach((src, i) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = altPrefix + ' ' + (i + 1);
+                    img.loading = 'lazy';
+                    slide.appendChild(img);
+                    track.appendChild(slide);
+                });
+            }
+
+            function initArrows(root, viewport) {
+                const prevBtn = root.querySelector('.carousel-arrow.prev');
+                const nextBtn = root.querySelector('.carousel-arrow.next');
+
+                nextBtn.addEventListener('click', () => {
+                    const atEnd = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 4;
+                    if (atEnd) {
+                        viewport.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        viewport.scrollBy({ left: viewport.clientWidth, behavior: 'smooth' });
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (viewport.scrollLeft <= 4) {
+                        viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        viewport.scrollBy({ left: -viewport.clientWidth, behavior: 'smooth' });
+                    }
+                });
+            }
+
+            async function initCarousel(root) {
+                const folder = root.dataset.folder;
+                const altPrefix = root.dataset.alt || 'Фото';
+                const viewport = root.querySelector('.carousel-viewport');
+                const track = root.querySelector('.carousel-track');
+
+                const images = await loadSequentialImages(folder, 30);
+
+                if (images.length === 0) {
+                    root.innerHTML = '<p class="carousel-empty">Фотографии скоро появятся здесь</p>';
+                    return;
+                }
+
+                buildSlides(track, images, altPrefix);
+                initArrows(root, viewport);
+            }
+
+            document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+        })();
+    </script>
+</body>
+</html>
