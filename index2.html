@@ -17,6 +17,7 @@
         :root {
             --primary-color: #4A3B5E;
             --accent-color: #C5A880;
+            --fire-accent: #A85C32;
             --bg-light: #F9F7F5;
             --text-dark: #2D2D2D;
             --text-muted: #66615f;
@@ -50,11 +51,20 @@
         }
 
         .masters-hero {
+            padding: 0;
+        }
+
+        .hero-photo-screen {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 30px 0 40px;
-            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+            background:
+                linear-gradient(135deg, rgba(253, 251, 251, 0.9) 0%, rgba(235, 237, 238, 0.9) 100%),
+                url('media/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .hero-top {
@@ -83,10 +93,10 @@
             margin-bottom: 18px;
             color: #8B6B3D;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.75rem;
-            /* font-size: 28px; */
+            font-size: 30px;
             line-height: 1.2;
             font-weight: 700;
+            font-style: normal;
         }
 
         h1 {
@@ -104,11 +114,19 @@
             color: #555;
         }
 
+        /* Подстраховка читаемости текста поверх фото на первом экране */
+        .hero-photo-screen h1,
+        .hero-photo-screen .hero-subtitle,
+        .hero-photo-screen .hero-lead {
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8), 0 1px 12px rgba(255, 255, 255, 0.6);
+        }
+
         .hero-badges {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            justify-content: center;
             text-transform: uppercase;
             font-weight: 600;
         }
@@ -133,6 +151,13 @@
             box-shadow: 0 6px 14px rgba(0,0,0,0.08);
         }
 
+        .hero-badge-date {
+            color: var(--primary-color);
+            border: 1px solid rgba(74, 59, 94, 0.15);
+        }
+
+        .hero-badge-date i { color: var(--fire-accent); }
+
         .hero-description {
             font-size: 1.2rem;
             line-height: 1.5;
@@ -155,9 +180,9 @@
             margin: 0 auto 28px;
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.75rem;
+            font-size: 30px;
             font-weight: 700;
-            font-style: italic;
+            font-style: normal;
             color: var(--primary-color);
             position: relative;
             padding-top: 26px;
@@ -471,6 +496,10 @@
             }
         }
 
+        .nav-cards-secondary.cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         /* ---------- Что входит в ретрит ---------- */
         .whats-included {
             padding: 64px 0 10px;
@@ -479,6 +508,8 @@
 
         .whats-included .results-title {
             text-align: center;
+            font-size: 30px;
+            font-style: normal;
         }
 
         .included-list {
@@ -522,7 +553,8 @@
         }
 
         .final-cta h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-size: 30px;
+            font-style: normal;
             color: var(--primary-color);
             margin-bottom: 14px;
         }
@@ -635,14 +667,18 @@
         }
 
         @media (max-width: 1120px) {
-            .masters-hero {
+            .hero-photo-screen {
                 background:
-                    linear-gradient(135deg, rgba(253, 251, 251, 0.98) 0%, rgba(235, 237, 238, 0.98) 100%);
+                    linear-gradient(135deg, rgba(253, 251, 251, 0.9) 0%, rgba(235, 237, 238, 0.9) 100%),
+                    url('media/background.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
         }
 
         @media (max-width: 860px) {
-            .masters-hero {
+            .hero-photo-screen {
                 min-height: auto;
             }
 
@@ -696,7 +732,7 @@
         }
 
         @media (max-width: 680px) {
-            .masters-hero {
+            .hero-photo-screen {
                 padding: 14px 0 16px;
                 align-items: flex-start;
             }
@@ -712,11 +748,17 @@
 
             .hero-subtitle {
                 margin-bottom: 10px;
-                font-size: 1.4375rem;
+                font-size: 24px;
             }
 
             .hero-transition {
-                font-size: 1.4375rem; /* 23px */
+                font-size: 24px;
+            }
+
+            .whats-included .results-title,
+            .block-title,
+            .final-cta h2 {
+                font-size: 24px;
             }
 
             .lead {
@@ -1190,9 +1232,10 @@
             margin: 0 auto 30px;
             color: #8B6B3D;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.75rem;
+            font-size: 30px;
             line-height: 1.2;
             font-weight: 700;
+            font-style: normal;
         }
 
         .content-section { padding: 64px 0; }
@@ -1445,6 +1488,25 @@
             display: block;
         }
 
+        .reviews-carousel .carousel-slide {
+            aspect-ratio: auto;
+            height: auto;
+            background: transparent;
+        }
+
+        .reviews-carousel .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            .reviews-carousel .carousel-slide {
+                aspect-ratio: auto;
+            }
+        }
+
         .carousel-arrow {
             position: absolute;
             top: 50%;
@@ -1506,35 +1568,45 @@
 
 <body>
     <main class="masters-hero">
+        <div class="hero-photo-screen">
+            <div class="container">
+                <div class="hero-top">
+                    <h1>🔥 Огненный ретрит</h1>
+                    <span class="hero-subtitle">Перерождение Огнём</span>
+                    <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
+
+                    <div class="hero-badges">
+                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>20.09.2026 – 28.09.2026</a>
+                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>01.10.2026 – 08.10.2026</a>
+                    </div>
+
+                    <section class="whats-included">
+                        <h2 class="results-title">Что будет на ретрите</h2>
+                        <ul class="included-list">
+                            <li><span>🔥</span> Трансформационный огненный сакральный массаж-инициация 3-4 часа, несколько дней</li>
+                            <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
+                            <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
+                            <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
+                            <li><span>🌅</span> Утренние медитации на рассвете</li>
+                            <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="section-cta">
+                    <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Присоединиться
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="hero-top">
-                <h1>🔥 Огненный ретрит</h1>
-                <span class="hero-subtitle">Перерождение Огнём</span>
-                <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
-
-                <section class="whats-included">
-                    <h2 class="results-title">Что будет на ретрите</h2>
-                    <ul class="included-list">
-                        <li><span>🔥</span> Трансформационный огненный массаж-инициация 3-4 часа, несколько дней</li>
-                        <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
-                        <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
-                        <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
-                        <li><span>🌅</span> Утренние медитации на рассвете</li>
-                        <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
-                    </ul>
-
-                </section>
-
-            </div>
-
-            <div class="section-cta">
-                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
-                class="btn"
-                target="_blank"
-                rel="noopener noreferrer">
-                    Присоединиться
-                </a>
-            </div>
 
             <div class="hero-transition">
                 Проводники к твоей истинной сути
@@ -1550,7 +1622,7 @@
                         <h2>Инна Шульгина</h2>
                         <p class="master-teaser">Проводник к твоей истинной сути.</p>
                         <ul class="master-points">
-                            <li>Огненный ритуал массаж</li>
+                            <li>Огненный сакральный ритуал массаж</li>
                             <li>Энерготерапевт</li>
                         </ul>
                     </div>
@@ -1615,7 +1687,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоиомость ретрита</a>
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
                     </div>
                 </div>
             </section>
@@ -1672,7 +1744,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоиомость ретрита</a>
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
                     </div>
                 </div>
             </section>
@@ -1707,7 +1779,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать еще больше о ретрите</a>
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать ещё больше о ретрите</a>
                     </div>
                 </div>
             </section>
@@ -1717,20 +1789,36 @@
                 <div class="container">
                     <h2 class="block-title">Отзывы о работе проводников</h2>
 
-                    <div class="carousel" data-carousel data-folder="media/reviews" data-alt="Отзыв клиента">
-                        <button class="carousel-arrow prev" aria-label="Предыдущий отзыв" type="button">
+                    <div class="carousel reviews-carousel"
+                        data-carousel
+                        data-folder="media/reviews"
+                        data-alt="Отзыв клиента">
+
+                        <button class="carousel-arrow prev"
+                                aria-label="Предыдущий отзыв"
+                                type="button">
                             <i class="fas fa-chevron-left"></i>
                         </button>
+
                         <div class="carousel-viewport">
                             <div class="carousel-track"></div>
                         </div>
-                        <button class="carousel-arrow next" aria-label="Следующий отзыв" type="button">
+
+                        <button class="carousel-arrow next"
+                                aria-label="Следующий отзыв"
+                                type="button">
                             <i class="fas fa-chevron-right"></i>
                         </button>
+
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Познакомиться ближе с проводниками</a>
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                        class="btn"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Познакомиться ближе с проводниками
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1754,6 +1842,32 @@
                     <a href="tel:+79173482348">+7 917 348-23-48</a>
                     <a href="tel:+79174134182">+7 917 413-41-82</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="block-title">Справочные материалы</h2>
+            <div class="nav-cards-secondary cols-3">
+                <a href="programma.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">🗓️</span>
+                    <h4>Программа по дням</h4>
+                    <p>Расписание всех дней ретрита: от заезда до огненного ритуала и посвящения</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
+                <a href="prozhivanie.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">🏠</span>
+                    <h4>Проживание и баня</h4>
+                    <p>Где вы будете жить, как устроена баня и что взять с собой в горы</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
+                <a href="yuzhny-ural.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">⛰️</span>
+                    <h4>Южный Урал</h4>
+                    <p>Место проведения ретрита — горы, реки и природа Тюлюка</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
             </div>
         </div>
     </section>
