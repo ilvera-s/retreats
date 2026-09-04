@@ -1489,52 +1489,56 @@
         }
 
 
-        /* ---- Отзывы: несколько сканов на экране ---- */
+        /* =========================================================
+        Карусель отзывов
+        3 отзыва на ПК / 2 на планшете / 1 на телефоне
+        ========================================================= */
 
         .reviews-carousel {
             max-width: 1100px;
         }
 
-        .reviews-carousel .carousel-viewport {
-            overflow-x: auto;
-        }
-
-        .reviews-carousel .carousel-track {
-            gap: 20px;
-        }
-
+        /* Убираем фиксированное соотношение 16:10 только для отзывов */
         .reviews-carousel .carousel-slide {
-            flex: 0 0 calc((100% - 40px) / 3);
+            flex: 0 0 calc(100% / 3);
+            width: calc(100% / 3);
+            box-sizing: border-box;
+
             aspect-ratio: auto;
             height: auto;
+
+            padding: 0 8px;
             background: transparent;
+
             scroll-snap-align: start;
         }
 
+        /* Сам скан */
         .reviews-carousel .carousel-slide img {
+            display: block;
+
             width: 100%;
             height: auto;
+
             object-fit: contain;
-            display: block;
+
             border-radius: 10px;
         }
 
-        /* Планшет */
+        /* Планшет: 2 отзыва */
         @media (max-width: 900px) {
             .reviews-carousel .carousel-slide {
-                flex: 0 0 calc((100% - 20px) / 2);
+                flex: 0 0 50%;
+                width: 50%;
             }
         }
 
-        /* Телефон */
+        /* Телефон: 1 отзыв */
         @media (max-width: 640px) {
-            .reviews-carousel .carousel-track {
-                gap: 0;
-            }
-
             .reviews-carousel .carousel-slide {
                 flex: 0 0 100%;
-                aspect-ratio: auto;
+                width: 100%;
+                padding: 0;
             }
         }
          /* -------- */
@@ -2116,20 +2120,50 @@
                 const prevBtn = root.querySelector('.carousel-arrow.prev');
                 const nextBtn = root.querySelector('.carousel-arrow.next');
 
+                function getStep() {
+                    const slide = root.querySelector('.carousel-slide');
+
+                    if (!slide) {
+                        return viewport.clientWidth;
+                    }
+
+                    return slide.getBoundingClientRect().width;
+                }
+
+                function getMaxScroll() {
+                    return viewport.scrollWidth - viewport.clientWidth;
+                }
+
                 nextBtn.addEventListener('click', () => {
-                    const atEnd = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 4;
-                    if (atEnd) {
-                        viewport.scrollTo({ left: 0, behavior: 'smooth' });
+                    const step = getStep();
+                    const maxScroll = getMaxScroll();
+
+                    if (viewport.scrollLeft >= maxScroll - 4) {
+                        viewport.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
                     } else {
-                        viewport.scrollBy({ left: viewport.clientWidth, behavior: 'smooth' });
+                        viewport.scrollBy({
+                            left: step,
+                            behavior: 'smooth'
+                        });
                     }
                 });
 
                 prevBtn.addEventListener('click', () => {
+                    const step = getStep();
+
                     if (viewport.scrollLeft <= 4) {
-                        viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
+                        viewport.scrollTo({
+                            left: getMaxScroll(),
+                            behavior: 'smooth'
+                        });
                     } else {
-                        viewport.scrollBy({ left: -viewport.clientWidth, behavior: 'smooth' });
+                        viewport.scrollBy({
+                            left: -step,
+                            behavior: 'smooth'
+                        });
                     }
                 });
             }
