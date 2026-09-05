@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Совместное представление трех мастеров: направления, опыт и возможность выбрать близкий формат работы.">
+    <meta name="description" content="Совместное представление двух мастеров: направления, опыт и возможность выбрать близкий формат работы.">
     <title>Ретриты | Пространство практик и трансформации</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,7 @@
             align-items: center;
             padding: 30px 0 40px;
             background:
-                linear-gradient(135deg, rgba(253, 251, 251, 0.9) 0%, rgba(235, 237, 238, 0.9) 100%),
+                linear-gradient(135deg, rgba(253, 251, 251, 0.8) 0%, rgba(235, 237, 238, 0.8) 100%),
                 url('media/background.jpeg');
             background-size: cover;
             background-position: center;
@@ -72,21 +72,6 @@
             margin: 0 auto 30px;
             text-align: center;
         }
-
-        .hero-top .whats-included {
-            background: transparent;
-            padding: 0;
-        }
-
-        .hero-top .whats-included .results-title {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .hero-top .included-list {
-            margin-bottom: 30px;
-        }
-
 
         .hero-subtitle {
             display: block;
@@ -158,26 +143,9 @@
 
         .hero-badge-date i { color: var(--fire-accent); }
 
-        .hero-description {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            color: #444;
-            margin-bottom: 24px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        .hero-description b {
-            color: var(--primary-color);
-            font-weight: 700;
-            display: block;
-            margin-top: 10px;
-        }
-
-
         .hero-transition {
             max-width: 640px;
-            margin: 0 auto 28px;
+            margin: 32px auto 28px;
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
             font-size: 30px;
@@ -198,85 +166,6 @@
             height: 3px;
             background: var(--accent-color);
             border-radius: 2px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-        }
-
-        .hero-btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-
-        .hero-call {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            align-items: center;
-            text-align: center;
-            flex-basis: 100%; 
-        }
-
-        .hero-call span {
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.75rem;
-            color: #8B6B3D;
-            font-weight: 600;
-        }
-
-        .hero-call a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .hero-call a:hover {
-            text-decoration: underline;
-        }
-
-        .hero-flex {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 28px;
-            text-align: left;
-        }
-
-        .hero-flex-text {
-            flex: 1 1 50%;
-            min-width: 0;
-        }
-
-        .hero-flex-text .hero-description {
-            margin-bottom: 22px;
-        }
-
-        .hero-photo-wrap {
-            flex: 1 1 42%;
-            max-width: 380px;
-            aspect-ratio: 1169 / 1280;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-        }
-
-        .hero-photo-wrap img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: top center;
         }
 
         .btn {
@@ -320,184 +209,6 @@
         .btn-outline:hover {
             background: var(--primary-color);
             color: white;
-        }
-
-        /* ---------- Цитата-тизер про огонь + видео ---------- */
-        .fire-media-row {
-            display: flex;
-            align-items: center;
-            gap: 44px;
-            margin: 0 auto 34px;
-            text-align: left;
-        }
-
-        .fire-video-wrap {
-            flex: 1 1 42%;
-            max-width: 380px;
-            aspect-ratio: 1169 / 1280;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-            background: #000;
-        }
-
-        .fire-video-wrap video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .fire-quote {
-            flex: 1 1 50%;
-            margin: 0;
-            text-align: left;
-            padding: 28px 32px;
-            background: linear-gradient(135deg, rgba(197, 168, 128, 0.1), rgba(74, 59, 94, 0.05));
-            border: 1px solid rgba(197, 168, 128, 0.3);
-            border-radius: 16px;
-        }
-
-        .fire-quote p {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.28rem;
-            line-height: 1.5;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-        }
-
-        .fire-quote-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #8B6B3D;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-
-        .fire-quote-link:hover {
-            border-color: #8B6B3D;
-        }
-
-        @media (max-width: 700px) {
-            .fire-media-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .fire-video-wrap {
-                max-width: none;
-                width: 100%;
-                aspect-ratio: 16 / 10;
-            }
-
-            .fire-quote {
-                text-align: center;
-                width: 100%;
-                padding: 26px 24px;
-            }
-        }
-
-        /* ---------- Карточки-навигация по разделам ---------- */
-        .nav-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin: 54px 0 10px;
-        }
-
-        .nav-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-decoration: none;
-            border-radius: 16px;
-            padding: 30px 32px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .nav-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-        }
-
-        .nav-card-icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .nav-card-arrow {
-            margin-top: auto;
-            font-weight: 700;
-            font-size: 0.88rem;
-        }
-
-        .nav-card-featured {
-            background: linear-gradient(135deg, var(--primary-color), #5c4a73);
-            color: #fff;
-        }
-
-        .nav-card-featured h3 {
-            color: #fff;
-            font-size: 1.7rem;
-            margin: 4px 0 10px;
-        }
-
-        .nav-card-featured p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
-            max-width: 540px;
-            margin-bottom: 18px;
-        }
-
-        .nav-card-featured .nav-card-arrow {
-            color: var(--accent-color);
-        }
-
-        .nav-cards-secondary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .nav-card-small {
-            background: #fff;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-card-small h4 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-color);
-            font-size: 1.25rem;
-            margin: 2px 0 8px;
-        }
-
-        .nav-card-small p {
-            color: #555;
-            font-size: 0.92rem;
-            margin-bottom: 16px;
-        }
-
-        .nav-card-small .nav-card-arrow {
-            color: #8B6B3D;
-        }
-
-        @media (max-width: 600px) {
-            .nav-cards-secondary {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-card {
-                padding: 24px 24px;
-            }
-        }
-
-        .nav-cards-secondary.cols-3 {
-            grid-template-columns: repeat(3, 1fr);
         }
 
         /* ---------- Что входит в ретрит ---------- */
@@ -547,7 +258,7 @@
 
         /* ---------- Финальный CTA перед футером ---------- */
         .final-cta {
-            padding: 70px 0 90px;
+            padding: 48px 0 70px;
             text-align: center;
             background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
         }
@@ -591,7 +302,7 @@
         .master-photo {
             position: relative;
             aspect-ratio: 4 / 4.4;
-            padding: 12px 12px 10px;
+            padding: 12px 12px 14px;
             background: #eee8e1;
             overflow: hidden;
         }
@@ -626,19 +337,19 @@
 
         .master-content h2 {
             color: #8B6B3D;
-            font-size: 1.08rem;
-            line-height: 1.1;
+            font-size: 1.35rem;
+            line-height: 1.15;
         }
 
         .master-teaser {
             color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.38;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .master-role {
             color: #8B6B3D;
-            font-size: 0.73rem;
+            font-size: 1rem;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -655,8 +366,8 @@
             margin-bottom: 5px;
             padding-left: 18px;
             color: #444;
-            font-size: 0.73rem;
-            line-height: 1.35;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .master-points li::before {
@@ -667,22 +378,10 @@
             font-size: 1rem;
         }
 
-        @media (max-width: 1120px) {
-            .hero-photo-screen {
-                background:
-                    linear-gradient(135deg, rgba(253, 251, 251, 0.9) 0%, rgba(235, 237, 238, 0.9) 100%),
-                    url('media/background.jpeg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-        }
-
         @media (max-width: 860px) {
             .hero-photo-screen {
                 min-height: auto;
             }
-
 
             .masters-grid {
                 grid-template-columns: 1fr;
@@ -698,37 +397,6 @@
             .master-photo {
                 aspect-ratio: 1 / 1.02;
                 min-height: 0;
-            }
-
-            .hero-flex {
-                gap: 24px;
-            }
-
-            .hero-photo-wrap {
-                max-width: 320px;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .hero-flex {
-                flex-direction: column;
-                gap: 18px;
-            }
-
-            .hero-photo-wrap {
-                order: -1;
-                width: 100%;
-                max-width: none;
-                aspect-ratio: 1169 / 1280;
-                max-height: 420px;
-            }
-
-            .hero-flex-text {
-                width: 100%;
-            }
-
-            .hero-flex-text .hero-description {
-                margin-bottom: 18px;
             }
         }
 
@@ -762,10 +430,6 @@
                 font-size: 24px;
             }
 
-            .lead {
-                display: none;
-            }
-
             .masters-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
@@ -795,24 +459,28 @@
             }
 
             .master-content h2 {
-                font-size: 1rem;
+                font-size: 1.15rem;
                 color: #8B6B3D;
             }
 
             .master-role {
-                font-size: 0.54rem;
+                font-size: 0.92rem;
                 letter-spacing: 0.4px;
                 color: #8B6B3D;
             }
 
+            .master-teaser {
+                font-size: 0.92rem;
+            }
+
             .master-description {
-                font-size: 0.74rem;
+                font-size: 0.92rem;
                 line-height: 1.34;
                 color: var(--text-muted);
             }
-            
+
             .master-points li {
-                font-size: 0.75rem;
+                font-size: 0.92rem;
             }
         }
 
@@ -826,7 +494,7 @@
             border-top: 1px solid rgba(74, 59, 94, 0.12);
 
             color: var(--text-color);
-            font-size: 0.88rem;
+            font-size: 1rem;
             line-height: 1.65;
         }
 
@@ -844,7 +512,7 @@
         }
 
         .master-description > p:first-child {
-            font-size: 0.92rem;
+            font-size: 1.05rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
@@ -853,7 +521,7 @@
             .master-description {
                 margin: 24px 16px 0;
                 padding-top: 20px;
-                font-size: 0.88rem;
+                font-size: 0.92rem;
                 line-height: 1.65;
             }
 
@@ -862,72 +530,8 @@
             }
 
             .master-description > p:first-child {
-                font-size: 0.92rem;
+                font-size: 1rem;
             }
-        }
-
-
-
-
-        .results-section {
-            padding: 70px 0 90px;
-            background-color: #fff;
-        }
-
-        .results-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.7rem, 3vw, 2.2rem);
-            color: var(--primary-color);
-            margin-bottom: 18px;
-        }
-
-        .results-list {
-            list-style: none;
-        }
-
-        .results-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .results-list li::before {
-            content: "✦";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        .results-block {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 30px;
-        }
-
-        .results-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: stretch;
-        }
-
-        .results-card {
-            background: var(--bg-light);
-            border-top: 4px solid var(--accent-color);
-            border-radius: 12px;
-            padding: 36px 34px;
-            box-shadow: 0 10px 26px rgba(74, 59, 94, 0.06);
-        }
-
-        .results-card .results-title {
-            margin-bottom: 20px;
-        }
-
-        .results-card .results-list li:last-child {
-            margin-bottom: 0;
         }
 
         .master-modal {
@@ -1033,29 +637,12 @@
         }
 
         @media (max-width: 900px) {
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-call {
-                align-items: center;
-                text-align: center;
-            }
             .hero-badges {
                 justify-content: center;
             }
         }
 
         @media (max-width: 768px) {
-            .results-block { border-left: none; padding-left: 0; }
-            .results-cards { grid-template-columns: 1fr; gap: 18px; }
-            .results-card { padding: 28px 24px; }
-            .results-list li { font-size: 1rem; }
-            .hero-description {
-                border-left: none;
-                padding-left: 0;
-                text-align: left;
-            }
-
             .master-modal {
                 height: 100dvh;
                 padding: 10px;
@@ -1144,16 +731,6 @@
         }
 
         /* ---------- CTA ---------- */
-        .cta-section { padding: 70px 0 90px; text-align: center; }
-        .cta-section h2 { margin-bottom: 16px; }
-
-        .cta-section p {
-            max-width: 560px;
-            margin: 0 auto 30px;
-            color: #555;
-            font-size: 1.05rem;
-        }
-
         .cta-actions {
             display: flex;
             align-items: center;
@@ -1191,7 +768,6 @@
             display: flex;
             justify-content: center;
             margin-top: 28px;
-            margin-bottom: 30px;
         }
 
         .btn {
@@ -1277,7 +853,7 @@
         }
 
         /* ================================================== */
-        /* ===== Новые блоки: Для кого / 7 дней / Место / Отзывы ===== */
+        /* ===== Новые блоки: Для кого / 8 дней / Место / Отзывы ===== */
         /* ================================================== */
 
         .block-title {
@@ -1292,7 +868,7 @@
             font-style: normal;
         }
 
-        .content-section { padding: 64px 0; }
+        .content-section { padding: 36px 0; }
 
         /* ---- Блок "Для кого" ---- */
         .who-grid {
@@ -1331,7 +907,7 @@
             .who-grid { grid-template-columns: 1fr; }
         }
 
-        /* ---- Блок "Что произойдёт за 7 дней" ---- */
+        /* ---- Блок "Что произойдёт за 8 дней" ---- */
         .transform-list {
             list-style: none;
             max-width: 760px;
@@ -1639,6 +1215,76 @@
             .carousel-arrow { width: 38px; height: 38px; }
             .carousel-slide { aspect-ratio: 4 / 5; }
         }
+
+        /* ---- Блок "Справочные материалы" (3 карточки) ---- */
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 30px 32px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .nav-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .nav-card-arrow {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .nav-cards-secondary {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 16px;
+        }
+
+        .nav-card-small {
+            background: #fff;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-card-small h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 2px 0 8px;
+        }
+
+        .nav-card-small p {
+            color: #555;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        .nav-card-small .nav-card-arrow {
+            color: #8B6B3D;
+        }
+
+        .nav-cards-secondary.cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media (max-width: 600px) {
+            .nav-cards-secondary,
+            .nav-cards-secondary.cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-card {
+                padding: 24px 24px;
+            }
+        }
     </style>
 
     <!-- Yandex.Metrika counter -->
@@ -1663,41 +1309,38 @@
                 <div class="hero-top">
                     <h1>🔥 ОГНЕННЫЙ РЕТРИТ</h1>
                     <span class="hero-subtitle">Перерождение Огнём</span>
-                    <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
+                    <p class="hero-lead">Сгореть, чтобы возродиться — 8 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
 
                     <div class="hero-badges">
-                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>20.09.2026 – 28.09.2026</a>
+                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>21.09.2026 – 28.09.2026</a>
                         <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>01.10.2026 – 08.10.2026</a>
                     </div>
-
-                    <section class="whats-included">
-                        <h2 class="results-title">Что будет на ретрите</h2>
-                        <ul class="included-list">
-                            <li><span>🔥</span> Трансформационный огненный сакральный массаж-инициация 3-4 часа, несколько дней</li>
-                            <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
-                            <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
-                            <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
-                            <li><span>🌅</span> Утренние медитации на рассвете</li>
-                            <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
-                        </ul>
-
-                    </section>
-
-                </div>
-
-                <div class="section-cta">
-                    <a href="https://t.me/+SUhxZLz2dvRjNGEy"
-                    class="btn"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                        Присоединиться
-                    </a>
                 </div>
             </div>
         </div>
 
         <div class="container">
 
+            <section class="whats-included">
+                <h2 class="results-title">Что будет на ретрите</h2>
+                <ul class="included-list">
+                    <li><span>🔥</span> Трансформационный огненный сакральный массаж-инициация 3-4 часа, несколько дней</li>
+                    <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание, ребёфинг</li>
+                    <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
+                    <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
+                    <li><span>🌅</span> Утренние медитации на рассвете</li>
+                    <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
+                </ul>
+            </section>
+
+            <div class="section-cta">
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Присоединиться
+                </a>
+            </div>
 
         <div class="hero-transition">
             Проводники к твоей истинной сути
@@ -1731,7 +1374,7 @@
 
                 <div class="master-description">
 
-                    <p><strong>Мастер глубокой трансформации: 30 лет опыта в раскрытии потенциала человека</strong></p>
+                    <p><strong>Мастер глубокой трансформации: 30 лет опыта в раскрытии потенциала человека.</strong></p>
 
                     <p>Я — проводник к вашей истинной сути. Моя работа — это пространство, где стираются социальные маски и вы наконец-то встречаетесь с собой настоящим. За 30 лет практики я отточила мастерство видеть человека не как «пациента» или «клиента», а как живую энергию, требующую освобождения от накопленных годами «доспехов».</p>
 
@@ -1769,15 +1412,15 @@
 
                 <div class="master-content">
 
-                    <span class="master-role">Архитектор</span>
+                    <span class="master-role">Проводник - целитель</span>
 
                     <h2>Ильвера Ситдикова</h2>
 
                     <p class="master-teaser">Архитектор внутренней трансформации.</p>
 
                     <ul class="master-points">
-                        <li>Основатель авторских ретритов.</li>
-                        <li>Энерготерапевт, мастер дыхательных практик,</li>
+                        <li>Энерготерапевт, мастер дыхательных практик.</li>
+                        <li>Основатель авторских ретритов, объединяет мастерии и телесных практиков для глубинных трансформации во взаимодействии с человеком.</li>
                     </ul>
 
                 </div>
@@ -1786,7 +1429,7 @@
 
                     <p><strong>Мастер глубинной трансформации и дыхательных практик.</strong></p>
 
-                    <p>15 лет опыта в очищении Рода и раскрытии вашего потенциала.</p>
+                    <p>15 лет опыта работы с людьми по очищению родовых программ.</p>
 
                     <p>Я не просто работаю с симптомами — я нахожу «корень» там, где другие видят тупик. Мой метод — это синтез древних суфийских практик и проверенных веками техник работы с энергией, адаптированный под современные запросы.</p>
 
@@ -1796,7 +1439,7 @@
 
                     <p><strong>Результативность, подтвержденная цифрами:</strong> 1000+ человек прошли через программы очищения Рода, 1000+ свинцовых отливок вывели моих клиентов из состояний «застоя» в состояние потока.</p>
 
-                    <p><strong>Безопасность и экологичность:</strong> я не даю «волшебных таблеток», я обучаю вас управлять собственной энергией и родовым наследием.</p>
+                    <p><strong>Безопасность и экологичность:</strong> я не даю «волшебных таблеток», в моём поле ты сонастроишься и начинаешь сам управлять своим состоянием, вниманием и энергией родового наследия.</p>
 
                     <p><strong>Система «под ключ»:</strong> от глубокой диагностики до личного сопровождения в наставничестве.</p>
 
@@ -1857,10 +1500,10 @@
                 </div>
             </section>
 
-            <!-- ===== Блок: Что произойдёт за 7 дней ===== -->
+            <!-- ===== Блок: Что произойдёт за 8 дней ===== -->
             <section class="content-section">
                 <div class="container">
-                    <h2 class="block-title">Что произойдёт за 7 дней ретрита</h2>
+                    <h2 class="block-title">Что произойдёт за 8 дней ретрита</h2>
 
                     <ul class="transform-list">
                         <li class="transform-item">
