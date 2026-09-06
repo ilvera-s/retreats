@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Совместное представление трех мастеров: направления, опыт и возможность выбрать близкий формат работы.">
+    <meta name="description" content="Совместное представление двух мастеров: направления, опыт и возможность выбрать близкий формат работы.">
     <title>Ретриты | Пространство практик и трансформации</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
         :root {
             --primary-color: #4A3B5E;
             --accent-color: #C5A880;
+            --fire-accent: #A85C32;
             --bg-light: #F9F7F5;
             --text-dark: #2D2D2D;
             --text-muted: #66615f;
@@ -50,11 +51,20 @@
         }
 
         .masters-hero {
+            padding: 0;
+        }
+
+        .hero-photo-screen {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 30px 0 40px;
-            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+            background:
+                linear-gradient(135deg, rgba(253, 251, 251, 0.5) 0%, rgba(235, 237, 238, 0.8) 100%),
+                url('media/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .hero-top {
@@ -63,22 +73,23 @@
             text-align: center;
         }
 
-        .subtitle {
+        .hero-subtitle {
             display: block;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
             color: #8B6B3D;
-            font-size: 1.05rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            font-style: normal;
         }
 
         h1 {
             max-width: 760px;
-            margin: 0 auto 18px;
+            margin: 0 auto 8px;
             color: var(--primary-color);
-            font-size: 2.6rem;
-            line-height: 1.08;
+            font-size: 44px;
+            line-height: 1.15;
         }
 
         .hero-lead {
@@ -88,11 +99,19 @@
             color: #555;
         }
 
+        /* Подстраховка читаемости текста поверх фото на первом экране */
+        .hero-photo-screen h1,
+        .hero-photo-screen .hero-subtitle,
+        .hero-photo-screen .hero-lead {
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8), 0 1px 12px rgba(255, 255, 255, 0.6);
+        }
+
         .hero-badges {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            justify-content: center;
             text-transform: uppercase;
             font-weight: 600;
         }
@@ -117,30 +136,21 @@
             box-shadow: 0 6px 14px rgba(0,0,0,0.08);
         }
 
-        .hero-description {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            color: #444;
-            margin-bottom: 24px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 20px;
+        .hero-badge-date {
+            color: var(--primary-color);
+            border: 1px solid rgba(74, 59, 94, 0.15);
         }
 
-        .hero-description b {
-            color: var(--primary-color);
-            font-weight: 700;
-            display: block;
-            margin-top: 10px;
-        }
+        .hero-badge-date i { color: var(--fire-accent); }
 
         .hero-transition {
             max-width: 640px;
-            margin: 0 auto;
+            margin: 32px auto 28px;
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
+            font-size: 30px;
             font-weight: 700;
-            font-style: italic;
+            font-style: normal;
             color: var(--primary-color);
             position: relative;
             padding-top: 26px;
@@ -156,85 +166,6 @@
             height: 3px;
             background: var(--accent-color);
             border-radius: 2px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-        }
-
-        .hero-btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-
-        .hero-call {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            align-items: center;
-            text-align: center;
-            flex-basis: 100%; 
-        }
-
-        .hero-call span {
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.75rem;
-            color: #8B6B3D;
-            font-weight: 600;
-        }
-
-        .hero-call a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .hero-call a:hover {
-            text-decoration: underline;
-        }
-
-        .hero-flex {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 28px;
-            text-align: left;
-        }
-
-        .hero-flex-text {
-            flex: 1 1 50%;
-            min-width: 0;
-        }
-
-        .hero-flex-text .hero-description {
-            margin-bottom: 22px;
-        }
-
-        .hero-photo-wrap {
-            flex: 1 1 42%;
-            max-width: 380px;
-            aspect-ratio: 1169 / 1280;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-        }
-
-        .hero-photo-wrap img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: top center;
         }
 
         .btn {
@@ -280,180 +211,6 @@
             color: white;
         }
 
-        /* ---------- Цитата-тизер про огонь + видео ---------- */
-        .fire-media-row {
-            display: flex;
-            align-items: center;
-            gap: 44px;
-            margin: 0 auto 34px;
-            text-align: left;
-        }
-
-        .fire-video-wrap {
-            flex: 1 1 42%;
-            max-width: 380px;
-            aspect-ratio: 1169 / 1280;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-            background: #000;
-        }
-
-        .fire-video-wrap video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .fire-quote {
-            flex: 1 1 50%;
-            margin: 0;
-            text-align: left;
-            padding: 28px 32px;
-            background: linear-gradient(135deg, rgba(197, 168, 128, 0.1), rgba(74, 59, 94, 0.05));
-            border: 1px solid rgba(197, 168, 128, 0.3);
-            border-radius: 16px;
-        }
-
-        .fire-quote p {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.28rem;
-            line-height: 1.5;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-        }
-
-        .fire-quote-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #8B6B3D;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-
-        .fire-quote-link:hover {
-            border-color: #8B6B3D;
-        }
-
-        @media (max-width: 700px) {
-            .fire-media-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .fire-video-wrap {
-                max-width: none;
-                width: 100%;
-                aspect-ratio: 16 / 10;
-            }
-
-            .fire-quote {
-                text-align: center;
-                width: 100%;
-                padding: 26px 24px;
-            }
-        }
-
-        /* ---------- Карточки-навигация по разделам ---------- */
-        .nav-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin: 54px 0 10px;
-        }
-
-        .nav-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-decoration: none;
-            border-radius: 16px;
-            padding: 30px 32px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .nav-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
-        }
-
-        .nav-card-icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .nav-card-arrow {
-            margin-top: auto;
-            font-weight: 700;
-            font-size: 0.88rem;
-        }
-
-        .nav-card-featured {
-            background: linear-gradient(135deg, var(--primary-color), #5c4a73);
-            color: #fff;
-        }
-
-        .nav-card-featured h3 {
-            color: #fff;
-            font-size: 1.7rem;
-            margin: 4px 0 10px;
-        }
-
-        .nav-card-featured p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
-            max-width: 540px;
-            margin-bottom: 18px;
-        }
-
-        .nav-card-featured .nav-card-arrow {
-            color: var(--accent-color);
-        }
-
-        .nav-cards-secondary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .nav-card-small {
-            background: #fff;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-card-small h4 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-color);
-            font-size: 1.25rem;
-            margin: 2px 0 8px;
-        }
-
-        .nav-card-small p {
-            color: #555;
-            font-size: 0.92rem;
-            margin-bottom: 16px;
-        }
-
-        .nav-card-small .nav-card-arrow {
-            color: #8B6B3D;
-        }
-
-        @media (max-width: 600px) {
-            .nav-cards-secondary {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-card {
-                padding: 24px 24px;
-            }
-        }
-
         /* ---------- Что входит в ретрит ---------- */
         .whats-included {
             padding: 64px 0 10px;
@@ -462,6 +219,8 @@
 
         .whats-included .results-title {
             text-align: center;
+            font-size: 30px;
+            font-style: normal;
         }
 
         .included-list {
@@ -499,13 +258,14 @@
 
         /* ---------- Финальный CTA перед футером ---------- */
         .final-cta {
-            padding: 70px 0 90px;
+            padding: 48px 0 70px;
             text-align: center;
             background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
         }
 
         .final-cta h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-size: 30px;
+            font-style: normal;
             color: var(--primary-color);
             margin-bottom: 14px;
         }
@@ -520,9 +280,11 @@
 
         .masters-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
             align-items: stretch;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .master-card {
@@ -539,63 +301,64 @@
 
         .master-photo {
             position: relative;
-            aspect-ratio: 1 / 1.05;
+            aspect-ratio: 4 / 4.4;
+            padding: 12px 12px 14px;
             background: #eee8e1;
-        }
-
-        .master-photo::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.35) 100%);
-            pointer-events: none;
+            overflow: hidden;
         }
 
         .master-photo img {
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
-            object-position: top center;
+            object-fit: contain;
+            object-position: center bottom;
+            border-radius: 6px;
         }
+
+
+
+        .master-photo::after {
+            content: "";
+            position: absolute;
+            inset: 14px 14px 0;
+            border-radius: 6px 6px 0 0;
+            box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.06);
+            pointer-events: none;
+        }
+
 
         .master-content {
             display: flex;
             flex-direction: column;
             gap: 8px;
-            flex: 1;
             padding: 14px 14px 16px;
         }
 
         .master-content h2 {
             color: #8B6B3D;
-            font-size: 1.08rem;
-            line-height: 1.1;
+            font-size: 1.35rem;
+            line-height: 1.15;
         }
 
         .master-teaser {
             color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.38;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .master-role {
             color: #8B6B3D;
-            font-size: 0.73rem;
+            font-size: 1rem;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .master-description {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            line-height: 1.42;
-        }
 
         .master-points {
             list-style: none;
-            margin-top: auto;
+            margin-top: 4px;
         }
 
         .master-points li {
@@ -603,8 +366,8 @@
             margin-bottom: 5px;
             padding-left: 18px;
             color: #444;
-            font-size: 0.73rem;
-            line-height: 1.35;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .master-points li::before {
@@ -615,21 +378,15 @@
             font-size: 1rem;
         }
 
-        @media (max-width: 1120px) {
-            .masters-hero {
-                background:
-                    linear-gradient(135deg, rgba(253, 251, 251, 0.98) 0%, rgba(235, 237, 238, 0.98) 100%);
-            }
-        }
-
         @media (max-width: 860px) {
-            .masters-hero {
+            .hero-photo-screen {
                 min-height: auto;
             }
 
             .masters-grid {
                 grid-template-columns: 1fr;
                 max-width: 560px;
+                gap: 16px;
             }
 
             .master-card {
@@ -641,41 +398,10 @@
                 aspect-ratio: 1 / 1.02;
                 min-height: 0;
             }
-
-            .hero-flex {
-                gap: 24px;
-            }
-
-            .hero-photo-wrap {
-                max-width: 320px;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .hero-flex {
-                flex-direction: column;
-                gap: 18px;
-            }
-
-            .hero-photo-wrap {
-                order: -1;
-                width: 100%;
-                max-width: none;
-                aspect-ratio: 1169 / 1280;
-                max-height: 420px;
-            }
-
-            .hero-flex-text {
-                width: 100%;
-            }
-
-            .hero-flex-text .hero-description {
-                margin-bottom: 18px;
-            }
         }
 
         @media (max-width: 680px) {
-            .masters-hero {
+            .hero-photo-screen {
                 padding: 14px 0 16px;
                 align-items: flex-start;
             }
@@ -684,19 +410,24 @@
                 margin-bottom: 10px;
             }
 
-            .subtitle {
-                margin-bottom: 6px;
-                font-size: 0.66rem;
-                letter-spacing: 0.8px;
-            }
-
             h1 {
-                font-size: 1.48rem;
-                margin-bottom: 6px;
+                font-size: 36px;
+                margin-bottom: 5px;
             }
 
-            .lead {
-                display: none;
+            .hero-subtitle {
+                margin-bottom: 10px;
+                font-size: 24px;
+            }
+
+            .hero-transition {
+                font-size: 24px;
+            }
+
+            .whats-included .results-title,
+            .block-title,
+            .final-cta h2 {
+                font-size: 24px;
             }
 
             .masters-grid {
@@ -728,86 +459,76 @@
             }
 
             .master-content h2 {
-                font-size: 1rem;
+                font-size: 1.15rem;
                 color: #8B6B3D;
             }
 
             .master-role {
-                font-size: 0.54rem;
+                font-size: 0.92rem;
                 letter-spacing: 0.4px;
                 color: #8B6B3D;
             }
 
+            .master-teaser {
+                font-size: 0.92rem;
+            }
+
             .master-description {
-                font-size: 0.74rem;
+                font-size: 0.92rem;
                 line-height: 1.34;
                 color: var(--text-muted);
             }
-            
+
             .master-points li {
-                font-size: 0.75rem;
+                font-size: 0.92rem;
             }
         }
 
-        .results-section {
-            padding: 70px 0 90px;
-            background-color: #fff;
+        /* ---- Подробное описание мастеров (на странице и в модалке — общий источник) ---- */
+
+        .master-description {
+            margin: 28px 24px 0;
+            padding-top: 22px;
+            border-top: 1px solid rgba(74, 59, 94, 0.12);
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.65;
         }
 
-        .results-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.7rem, 3vw, 2.2rem);
+        .master-description p {
+            margin: 0 0 16px;
+        }
+
+        .master-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .master-description strong {
+            font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 18px;
         }
 
-        .results-list {
-            list-style: none;
-        }
-
-        .results-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
+        .master-description > p:first-child {
             font-size: 1.05rem;
-            color: #444;
             line-height: 1.5;
-        }
-
-        .results-list li::before {
-            content: "✦";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        .results-block {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 30px;
-        }
-
-        .results-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: stretch;
-        }
-
-        .results-card {
-            background: var(--bg-light);
-            border-top: 4px solid var(--accent-color);
-            border-radius: 12px;
-            padding: 36px 34px;
-            box-shadow: 0 10px 26px rgba(74, 59, 94, 0.06);
-        }
-
-        .results-card .results-title {
             margin-bottom: 20px;
         }
 
-        .results-card .results-list li:last-child {
-            margin-bottom: 0;
+        @media (max-width: 640px) {
+            .master-description {
+                margin: 24px 16px 0;
+                padding-top: 20px;
+                font-size: 0.92rem;
+                line-height: 1.65;
+            }
+
+            .master-description p {
+                margin-bottom: 15px;
+            }
+
+            .master-description > p:first-child {
+                font-size: 1rem;
+            }
         }
 
         .master-modal {
@@ -909,33 +630,28 @@
             color: #4a4a4a;
             font-size: 1rem;
             line-height: 1.6;
-            white-space: pre-line;
+        }
+
+        .master-modal-text p {
+            margin: 0 0 16px;
+        }
+
+        .master-modal-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .master-modal-text strong {
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         @media (max-width: 900px) {
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-call {
-                align-items: center;
-                text-align: center;
-            }
             .hero-badges {
                 justify-content: center;
             }
         }
 
         @media (max-width: 768px) {
-            .results-block { border-left: none; padding-left: 0; }
-            .results-cards { grid-template-columns: 1fr; gap: 18px; }
-            .results-card { padding: 28px 24px; }
-            .results-list li { font-size: 1rem; }
-            .hero-description {
-                border-left: none;
-                padding-left: 0;
-                text-align: left;
-            }
-
             .master-modal {
                 height: 100dvh;
                 padding: 10px;
@@ -1024,16 +740,6 @@
         }
 
         /* ---------- CTA ---------- */
-        .cta-section { padding: 70px 0 90px; text-align: center; }
-        .cta-section h2 { margin-bottom: 16px; }
-
-        .cta-section p {
-            max-width: 560px;
-            margin: 0 auto 30px;
-            color: #555;
-            font-size: 1.05rem;
-        }
-
         .cta-actions {
             display: flex;
             align-items: center;
@@ -1066,6 +772,12 @@
         }
 
         .cta-call a:hover { text-decoration: underline; }
+
+        .section-cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 28px;
+        }
 
         .btn {
             display: inline-block;
@@ -1148,6 +860,440 @@
             letter-spacing: 0.08em;
             line-height: 1;
         }
+
+        /* ================================================== */
+        /* ===== Новые блоки: Для кого / 7 дней / Место / Отзывы ===== */
+        /* ================================================== */
+
+        .block-title {
+            display: block;
+            text-align: center;
+            margin: 0 auto 30px;
+            color: #8B6B3D;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .content-section { padding: 36px 0; }
+
+        /* ---- Блок "Для кого" ---- */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .who-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 22px 24px;
+        }
+
+        .who-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .who-card p {
+            font-size: 0.94rem;
+            color: #555;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 760px) {
+            .who-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- Блок "Что произойдёт за 7 дней" ---- */
+        .transform-list {
+            list-style: none;
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .transform-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .transform-num {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transform-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .transform-item p {
+            font-size: 0.98rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ---- Блок "Что уходит / Что приходит" ---- */
+        .shift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .shift-card {
+            position: relative;
+            background: var(--bg-light);
+            border-radius: 18px;
+            padding: 34px 34px 34px 42px;
+        }
+
+        .shift-card::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 12px;
+            bottom: 12px;
+            width: 6px;
+            border-radius: 999px;
+        }
+
+        .shift-out::before { background: #9C8DAE; }
+        .shift-in::before { background: var(--accent-color); }
+
+        .shift-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 22px;
+        }
+
+        .shift-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .shift-list li {
+            position: relative;
+            padding-left: 24px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .shift-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 760px) {
+            .shift-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- Блок "Место проведения" ---- */
+        .venue-text {
+            max-width: 720px;
+            margin: 0 auto 10px;
+            text-align: center;
+        }
+
+        .venue-text p {
+            font-size: 1.02rem;
+            color: #444;
+            margin-bottom: 14px;
+            line-height: 1.65;
+        }
+
+        .venue-text p:last-child { margin-bottom: 0; }
+
+        .venue-text a {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .venue-text a:hover { color: #8B6B3D; }
+
+        .venue-lede {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-color) !important;
+        }
+
+        .map-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: #fff;
+            border: 1px solid rgba(74, 59, 94, 0.15);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .map-link:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+
+        .venue-map-label {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 34px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        /* ---- Карусель (переиспользуется для "Ural" и "reviews") ---- */
+        .carousel {
+            position: relative;
+            margin: 34px auto 0;
+            max-width: 860px;
+        }
+
+        .carousel-viewport {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            scroll-behavior: smooth;
+            border-radius: 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            box-shadow: 0 14px 30px rgba(74, 59, 94, 0.12);
+        }
+
+        .carousel-viewport::-webkit-scrollbar { display: none; }
+
+        .carousel-track { display: flex; width: 100%; }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            aspect-ratio: 16 / 10;
+            background: #eee8e1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* =========================================================
+        Карусель отзывов
+        3 отзыва на ПК / 2 на планшете / 1 на телефоне
+        ========================================================= */
+
+        .reviews-carousel {
+            max-width: 1100px;
+        }
+
+        /* Убираем фиксированное соотношение 16:10 только для отзывов */
+        .reviews-carousel .carousel-slide {
+            flex: 0 0 calc(100% / 3);
+            width: calc(100% / 3);
+            box-sizing: border-box;
+
+            aspect-ratio: auto;
+            height: auto;
+
+            padding: 0 8px;
+            background: transparent;
+
+            scroll-snap-align: start;
+        }
+
+        /* Сам скан */
+        .reviews-carousel .carousel-slide img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+        /* Планшет: 2 отзыва */
+        @media (max-width: 900px) {
+            .reviews-carousel .carousel-slide {
+                flex: 0 0 50%;
+                width: 50%;
+            }
+        }
+
+        /* Телефон: 1 отзыв */
+        @media (max-width: 640px) {
+            .reviews-carousel .carousel-slide {
+                flex: 0 0 100%;
+                width: 100%;
+                padding: 0;
+            }
+        }
+         /* -------- */
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            color: var(--primary-color);
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-arrow:hover { background: var(--primary-color); color: #fff; }
+        .carousel-arrow.prev { left: -20px; }
+        .carousel-arrow.next { right: -20px; }
+
+        .carousel-empty {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 50px 20px;
+            font-size: 0.92rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .carousel-arrow.prev { left: 6px; }
+            .carousel-arrow.next { right: 6px; }
+        }
+
+        @media (max-width: 640px) {
+            .carousel-arrow { width: 38px; height: 38px; }
+            .carousel-slide { aspect-ratio: 4 / 5; }
+        }
+
+        /* ---- Блок "Справочные материалы" (3 карточки) ---- */
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 30px 32px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .nav-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .nav-card-arrow {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .nav-cards-secondary {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 16px;
+        }
+
+        .nav-card-small {
+            background: #fff;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-card-small h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 2px 0 8px;
+        }
+
+        .nav-card-small p {
+            color: #555;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        .nav-card-small .nav-card-arrow {
+            color: #8B6B3D;
+        }
+
+        .nav-cards-secondary.cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media (max-width: 600px) {
+            .nav-cards-secondary,
+            .nav-cards-secondary.cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-card {
+                padding: 24px 24px;
+            }
+        }
     </style>
 
     <!-- Yandex.Metrika counter -->
@@ -1167,177 +1313,336 @@
 
 <body>
     <main class="masters-hero">
-        <div class="container">
-            <div class="hero-top">
-                <span class="subtitle">🔥 Огненный ретрит</span>
-                <h1>Перерождение Огнём</h1>
-                <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
+        <div class="hero-photo-screen">
+            <div class="container">
+                <div class="hero-top">
+                    <h1>🔥 ОГНЕННЫЙ РЕТРИТ</h1>
+                    <span class="hero-subtitle">Перерождение Огнём</span>
+                    <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
 
-                <div class="hero-flex">
-                    <div class="hero-flex-text">
-                        <div class="results-block">
-                            <ul class="results-list">
-                                <li>Огненный ритуал перерождения — сердце программы ретрита</li>
-                                <li>Южный Урал. У подножия гор — Батюшка Иремель и Матушка Зигальга. Ларкино ущелье.</li>
-                                <li>Камерный формат — до 10 участников</li>
-                                <li>Авторская программа</li>
-                                <li>Утренние медитации</li>
-                            </ul>
-                        </div>
-
-                        <div class="hero-buttons">
-                            <div class="hero-btn-group">
-                                <a href="programma.html" class="btn">ПРОГРАММА</a>
-                                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
-                                <a href="https://t.me/ILVERA69" class="btn-outline" target="_blank" rel="noopener noreferrer">ЗАПИСАТЬСЯ</a>
-                            </div>
-                            <div class="hero-call">
-                                <span>Или позвонить</span>
-                                <a href="tel:+79173482348">+7 917 348-23-48</a>
-                                <a href="tel:+79174134182">+7 917 413-41-82</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-photo-wrap">
-                        <img src="media/photo1.jpeg" alt="Общее фото с текстом" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
+                    <div class="hero-badges">
+                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>21.09.2026 – 28.09.2026</a>
+                        <a href="programma.html" class="hero-badge hero-badge-date"><i class="fas fa-calendar-alt" style="margin-right:8px;"></i>01.10.2026 – 08.10.2026</a>
                     </div>
                 </div>
-
-                <div class="fire-media-row">
-                    <div class="fire-video-wrap">
-                        <video src="media/video1.mp4" autoplay muted loop playsinline poster="media/photo1.jpeg"></video>
-                    </div>
-                    <div class="fire-quote">
-                        <p>«Огонь — это не просто стихия. Это посредник между материальным и духовным, символ высшей энергии, способной преобразить человека и зажечь внутренний свет».</p>
-                        <!-- <a href="ogneniy-retrit.html" class="fire-quote-link">Что такое огненный ритуал →</a> -->
-                        <a href="ogneniy-retrit.html#fire-ritual" class="fire-quote-link">Что такое огненный ритуал →</a>
-                    </div>
-                </div>
-
-                <div class="hero-transition">
-                    <!-- Помогу восстановить состояние и сбалансировать сферы жизни. -->
-                    Проводники к твоей истинной сути
-                </div>
-
             </div>
+        </div>
 
-            <section class="masters-grid" aria-label="Мастера">
-                <article class="master-card">
-                    <div class="master-photo">
-                        <img src="media/persons/person_1.jpeg" alt="Фото мастера 1" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
-                    </div>
-                    <div class="master-content">
-                        <span class="master-role">Проводник</span>
-                        <h2>Инна Шульгина</h2>
-                        <p class="master-teaser">Проводник к твоей истинной сути.</p>
-                        <ul class="master-points">
-                            <li>Огненный ритуал массаж</li>
-                            <li>Энерготерапевт</li>
-                        </ul>
-                    </div>
-                </article>
+        <div class="container">
 
-                <article class="master-card">
-                    <div class="master-photo">
-                        <img src="media/persons/person_2.jpeg" alt="Фото мастера 2" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
-                    </div>
-                    <div class="master-content">
-                        <span class="master-role">Архитектор</span>
-                        <h2>Ильвера Ситдикова</h2>
-                        <p class="master-teaser">Архитектор внутренней трансформации.</p>
-                        <ul class="master-points">
-                            <li>Авторские ретриты</li>
-                            <li>Работа с силой рода</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="master-card">
-                    <div class="master-photo">
-                        <img src="media/persons/person_3.jpeg" alt="Фото мастера 3" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
-                    </div>
-                    <div class="master-content">
-                        <span class="master-role">Мастер</span>
-                        <h2>Роман Цыбрий</h2>
-                        <p class="master-teaser">Мастер глубинных состояний.</p>
-                        <ul class="master-points">
-                            <li>Метод «Не Бары»</li>
-                            <li>Вход в иное измерение</li>
-                        </ul>
-                    </div>
-                </article>
+            <section class="whats-included">
+                <h2 class="results-title">Что будет на ретрите</h2>
+                <ul class="included-list">
+                    <li><span>🔥</span> Трансформационный огненный сакральный массаж-инициация 3-4 часа, несколько дней</li>
+                    <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание, ребёфинг</li>
+                    <li><span>🛁</span> Банные церемонии с древними ритуалами: выкатка солью, травами и маслами</li>
+                    <li><span>⛰️</span> Восхождение на священную гору Иремель, купание в холодных водах живописного места — Ларкино ущелье</li>
+                    <li><span>🌅</span> Утренние медитации на рассвете</li>
+                    <li><span>🏡</span> Проживание в комфортных трехместных номерах, трехразовое вегетарианское питание</li>
+                </ul>
             </section>
 
-            <div class="nav-cards">
-                <a href="ogneniy-retrit.html" class="nav-card nav-card-featured">
-                    <span class="nav-card-icon">🔥</span>
-                    <h3>Огненный ретрит</h3>
-                    <p>Сжигая прошлое, создавая будущее — программа, ритуалы и практики трансформации</p>
-                    <span class="nav-card-arrow">Подробнее →</span>
+            <div class="section-cta">
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Присоединиться
                 </a>
-
-                <div class="nav-cards-secondary">
-                    <a href="yuzhny-ural.html" class="nav-card nav-card-small">
-                        <span class="nav-card-icon">⛰️</span>
-                        <h4>Южный Урал</h4>
-                        <p>Тюлюк, Иремель, Зигальга, Ларкино ущелье</p>
-                        <span class="nav-card-arrow">Подробнее →</span>
-                    </a>
-                    <a href="prozhivanie.html" class="nav-card nav-card-small">
-                        <span class="nav-card-icon">🏠</span>
-                        <h4>Проживание</h4>
-                        <p>Дом, четыре бани, вегетарианский стол</p>
-                        <span class="nav-card-arrow">Подробнее →</span>
-                    </a>
-                </div>
             </div>
+
+        <div class="hero-transition">
+            Проводники к твоей истинной сути
         </div>
+
+        <section class="masters-grid" aria-label="Мастера">
+
+            <article class="master-card">
+
+                <div class="master-photo">
+                    <img src="media/persons/person_11.jpeg"
+                        alt="Фото мастера 1"
+                        loading="eager"
+                        onerror="this.onerror=null;this.src='https://placehold.co/*:*//placehold.co';">
+                </div>
+
+                <div class="master-content">
+
+                    <span class="master-role">Проводник</span>
+
+                    <h2>Инна Шульгина</h2>
+
+                    <p class="master-teaser">Проводник к твоей истинной сути.</p>
+
+                    <ul class="master-points">
+                        <li>Огненный сакральный ритуал массаж</li>
+                        <li>Энерготерапевт</li>
+                    </ul>
+
+                </div>
+
+                <div class="master-description">
+
+                    <p><strong>Мастер глубокой трансформации: 30 лет опыта в раскрытии потенциала человека.</strong></p>
+
+                    <p>Я — проводник к вашей истинной сути. Моя работа — это пространство, где стираются социальные маски и вы наконец-то встречаетесь с собой настоящим. За 30 лет практики я отточила мастерство видеть человека не как «пациента» или «клиента», а как живую энергию, требующую освобождения от накопленных годами «доспехов».</p>
+
+                    <p><strong>Почему выбирают меня:</strong></p>
+
+                    <p><strong>Синтез опыта:</strong> 30 лет работы с людьми (из них 20 лет в обучении и 10 — в прямом целительстве) позволили мне создать метод, где интеллект встречается с интуицией, а глубинная психология — с телесными практиками.</p>
+
+                    <p><strong>Индивидуальный «камерный» подход:</strong> Я не работаю по шаблонам. Мои сессии — это 2–3 часа полного погружения, где я настраиваюсь на ваш ритм. Кому-то нужна тишина для исцеления, кому-то — энергия для прорыва, кому-то — честное слово для ясности.</p>
+
+                    <p><strong>Результат, который чувствуешь физически:</strong> Вы приходите с грузом, а уходите с легкостью. Моя работа снимает «зажимы», которые человек носит годами, возвращая вам состояние внутренней опоры и целостности.</p>
+
+                    <p><strong>Статистика моей профессиональной осознанности:</strong></p>
+
+                    <p><strong>10 000+ часов</strong> глубокой работы с людьми: это тысячи историй, судеб и личностных перерождений.</p>
+
+                    <p><strong>5 000+ личных сессий:</strong> мой метод проверен не в теории, а в тысячах живых встреч, где каждый человек выходил «пересобранным» и пробужденным.</p>
+
+                    <p><strong>Мастерская настройка:</strong> за десятилетия работы я научилась входить в контакт с любым человеком без страха и границ, создавая безопасное поле для самых глубоких трансформаций.</p>
+
+                    <p><strong>Ваша «пересборка» начинается там, где заканчиваются шаблоны.</strong></p>
+
+                </div>
+
+            </article>
+
+
+            <article class="master-card">
+
+                <div class="master-photo">
+                    <img src="media/persons/person_21.jpeg"
+                        alt="Фото мастера 2"
+                        loading="eager"
+                        onerror="this.onerror=null;this.src='https://placehold.co/*:*//placehold.co';">
+                </div>
+
+                <div class="master-content">
+
+                    <span class="master-role">Проводник</span>
+
+                    <h2>Ильвера Ситдикова</h2>
+
+                    <p class="master-teaser">Архитектор внутренней трансформации.</p>
+
+                    <ul class="master-points">
+                        <li>Энерготерапевт, мастер дыхательных практик.</li>
+                        <li>Основатель авторских ретритов, объединяет мастеров и телесных практиков для глубинных трансформации во взаимодействии с человеком.</li>
+                    </ul>
+
+                </div>
+
+                <div class="master-description">
+
+                    <p><strong>Мастер глубинной трансформации и дыхательных практик.</strong></p>
+
+                    <p>15 лет опыта работы с людьми по очищению родовых программ.</p>
+
+                    <p>Я не просто работаю с симптомами — я нахожу «корень» там, где другие видят тупик. Мой метод — это синтез древних суфийских практик и проверенных веками техник работы с энергией, адаптированный под современные запросы.</p>
+
+                    <p><strong>Почему выбирают меня:</strong></p>
+
+                    <p><strong>15 лет практики:</strong> от паломничеств по Местам Силы до личного наставничества специалистов.</p>
+
+                    <p><strong>Результативность, подтвержденная цифрами:</strong> 1000+ человек прошли через программы очищения Рода, 1000+ свинцовых отливок вывели моих клиентов из состояний «застоя» в состояние потока.</p>
+
+                    <p><strong>Безопасность и экологичность:</strong> я не даю «волшебных таблеток», в моём поле ты сонастроишься и начинаешь сам управлять своим состоянием, вниманием и энергией родового наследия.</p>
+
+                    <p><strong>Система «под ключ»:</strong> от глубокой диагностики до личного сопровождения в наставничестве.</p>
+
+                    <p>Ваш результат — это освобождение от ограничивающих программ, которые годами мешали вам жить полноценно.</p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <div class="section-cta">
+            <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+                Связаться с проводником
+            </a>
+        </div>
+
+
+
+            <!-- ===== Блок: Для кого этот ретрит будет ценен ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Для кого этот ретрит будет ценен</h2>
+
+                    <div class="who-grid">
+                        <div class="who-card">
+                            <h3>Для тех, кто устал быть «сильным»</h3>
+                            <p>Кто привык всё тащить на себе — бизнес, семью, команды, чужие ожидания. Кто боится остановиться, потому что кажется: «рухнет всё». Здесь вы получите легальное разрешение сдаться и увидите, что мир не разрушается, когда вы перестаёте контролировать.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, чьё тело кричит</h3>
+                            <p>У кого хронические зажимы, психосоматика, аутоиммунные процессы, постоянная усталость. Кто уже понял, что таблетки не лечат причину. Здесь вы услышите свой организм иначе и дадите ему новый сценарий — без войны с собой.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто застрял в духовном поиске</h3>
+                            <p>Кто прошёл десятки практик, медитаций и ретритов, но так и не научился жить эту магию в реальном мире — в деньгах, теле, отношениях. Здесь вы заземлите своё «небесное» и начнёте воплощать его в материи.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто потерял себя в тени партнёра</h3>
+                            <p>Кто всю жизнь был «вторым номером», поддерживал, жертвовал, растворялся в успешном супруге. Кто боится, что без него — никто. Здесь вы вернёте себе свой голос, свою силу и своё место в этом мире.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто лечит/учит других, но сам разваливается</h3>
+                            <p>Психологи, врачи, коучи, массажисты, телесные терапевты. Кто годами «держит» клиентов, но не имеет безопасного пространства, чтобы побыть просто человеком. Здесь вы пройдёте супервизию тела и станете другим специалистом — более целостным и проводящим.</p>
+                        </div>
+                        <div class="who-card">
+                            <h3>Для тех, кто несёт груз рода</h3>
+                            <p>Кто вырос в дисфункциональной семье, кто привык выживать, спасать, быть «удобным» или «отличником». Кто чувствует, что живёт не свою жизнь, а повторяет судьбу родителей. Здесь вы символически завершите родовые сценарии и начнёте собственную историю рода.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Что произойдёт за 7 дней ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Что произойдёт за 7 дней ретрита</h2>
+
+                    <ul class="transform-list">
+                        <li class="transform-item">
+                            <span class="transform-num">1</span>
+                            <div>
+                                <h3>Вы переживёте «перерождение»</h3>
+                                <p>Через огонь, соль, дыхание и телесные практики вы встретитесь с самым глубоким страхом. Страхом смерти. Не в голове — в каждой клетке. И на выходе выйдете за пределы того, кем вы себя считали. Это не метафора — это физический опыт тотальной сдачи.</p>
+                            </div>
+                        </li>
+                        <li class="transform-item">
+                            <span class="transform-num">2</span>
+                            <div>
+                                <h3>Ваше тело получит новый сценарий</h3>
+                                <p>Спазмы, блоки, зажимы, годами хранившие старые программы — начнут отпускать. Вы перестанете воевать с телом и начнёте слышать его как союзника. Энергия, которая уходила на удержание контроля, вернётся в вашу жизнь.</p>
+                            </div>
+                        </li>
+                        <li class="transform-item">
+                            <span class="transform-num">3</span>
+                            <div>
+                                <h3>Вы вернёте себе внутреннюю опору</h3>
+                                <p>Вместо «надо» и «должна» — «я выбираю». Вместо страха рухнуть — спокойствие и доверие к миру. Вы перестанете искать себя вовне (в достижениях, деньгах, одобрении других) и впервые почувствуете: вы есть. И этого достаточно. Навсегда.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="shift-grid">
+                        <div class="shift-card shift-out">
+                            <h3>Что уходит?</h3>
+                            <ul class="shift-list">
+                                <li>Глубокие эмоциональные травмы</li>
+                                <li>Напряжение, ставшее привычным</li>
+                                <li>Тревога, которая стала фоном жизни</li>
+                                <li>Старые сценарии и чужие роли</li>
+                            </ul>
+                        </div>
+                        <div class="shift-card shift-in">
+                            <h3>Что приходит?</h3>
+                            <ul class="shift-list">
+                                <li>Внутренний баланс</li>
+                                <li>Устойчивость</li>
+                                <li>Опора, которую никто не может поколебать</li>
+                                <li>Осознанность</li>
+                                <li>Уверенность, рождённая не из головы, а из самой глубины</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Место проведения ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Место проведения</h2>
+
+                    <div class="venue-text">
+                        <p><a href="yuzhny-ural.html">Южный Урал</a>. У подножия гор — Батюшка Иремель и Матушка Зигальга.</p>
+                        <p>В сердце величественных гор, среди чистых рек и тишины природы вас ждёт пространство, где можно остановиться, выдохнуть и вернуться к себе настоящему.</p>
+                        <p class="venue-lede">Здесь время замедляется… чтобы вы наконец услышали себя</p>
+                    </div>
+
+                    <div class="carousel" data-carousel data-folder="media/Ural" data-alt="Южный Урал">
+                        <button class="carousel-arrow prev" aria-label="Предыдущее фото" type="button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track"></div>
+                        </div>
+                        <button class="carousel-arrow next" aria-label="Следующее фото" type="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <p class="venue-map-label">Место проведения:</p>
+                    <div class="map-links">
+                        <a href="https://maps.app.goo.gl/9ETzTrZQM6b8ojhx8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                        <a href="https://yandex.ru/maps/-/CTWjnQZB" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> Яндекс Карты</a>
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать ещё больше о ретрите</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Блок: Отзывы о работе проводников ===== -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="block-title">Отзывы о работе проводников</h2>
+
+                    <div class="carousel reviews-carousel"
+                        data-carousel
+                        data-folder="media/reviews"
+                        data-alt="Отзыв клиента">
+
+                        <button class="carousel-arrow prev"
+                                aria-label="Предыдущий отзыв"
+                                type="button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track"></div>
+                        </div>
+
+                        <button class="carousel-arrow next"
+                                aria-label="Следующий отзыв"
+                                type="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="section-cta">
+                        <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                        class="btn"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Познакомиться ближе с проводниками
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
     </main>
-
-    <section class="whats-included">
-        <div class="container">
-            <h2 class="results-title">Что входит в ретрит</h2>
-            <ul class="included-list">
-                <li><span>🔥</span> Огненный массаж-ритуал — 3–4 часа, несколько дней подряд</li>
-                <li><span>🧂</span> Баня четыре раза: соль, масла, контраст жара и холода</li>
-                <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
-                <li><span>⛰️</span> Восхождение на Иремель и купание в Ларкином ущелье</li>
-                <li><span>✨</span> Ритуал «Не Бары» и Инициация в белых одеждах</li>
-                <li><span>🌅</span> Утренние медитации на рассвете</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="results-section">
-        <div class="container">
-            <div class="results-cards">
-                <div class="results-card">
-                    <h2 class="results-title">Даты</h2>
-                    <ul class="results-list">
-                        <li>
-                            20.09.2026 - 28.09.2026
-                        </li>
-                        <li>
-                            01.10.2026 - 08.10.2026
-                        </li>
-                    </ul>
-                    <br><a href="programma.html">🗓️ Смотреть программу по дням →</a>
-
-                </div>
-
-                <div class="results-card">
-                    <h2 class="results-title">Цены</h2>
-                    <ul class="results-list">
-                        <li>Стандартная цена - 141'000 руб.</li>
-                        <li>Успей забронировать за собой место на участие в ретрите, внеси депозит 10%</li>
-                        <li>Внеси 35'000 руб. до 10.09.2026 г. и успей забронировать по вкусной цене - 113'600 руб.</li>
-                        <li>В случае отказа Клиентом от участия за 6 дней (или менее) до начала ретрита, депозит 10% возврату не подлежит.</li> 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="final-cta">
         <div class="container">
@@ -1354,6 +1659,32 @@
                     <a href="tel:+79173482348">+7 917 348-23-48</a>
                     <a href="tel:+79174134182">+7 917 413-41-82</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="block-title">Справочные материалы</h2>
+            <div class="nav-cards-secondary cols-3">
+                <a href="programma.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">🗓️</span>
+                    <h4>Программа по дням</h4>
+                    <p>Расписание всех дней ретрита: от заезда до огненного ритуала и посвящения</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
+                <a href="prozhivanie.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">🏠</span>
+                    <h4>Проживание и баня</h4>
+                    <p>Где вы будете жить, как устроена баня и что взять с собой в горы</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
+                <a href="yuzhny-ural.html" class="nav-card nav-card-small">
+                    <span class="nav-card-icon">⛰️</span>
+                    <h4>Южный Урал</h4>
+                    <p>Место проведения ретрита — горы, реки и природа Тюлюка</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
             </div>
         </div>
     </section>
@@ -1407,108 +1738,6 @@
 
 
     <script>
-        const masterData = {
-            person_1: {
-                title: 'Инна Шульгина',
-                photo: 'media/persons/person_11.jpeg',
-                text: `Проводник к твоей истинной сути.
-Я не просто прикасаюсь к телу - я касаюсь твоей истории. 
-
-Целитель. Трансформационный коуч. Твоя проводница в мир, где стихии встречаются с сознанием, а body становится картой, по которой я читаю твой путь. В моей палитре - кашмирский и тантрический массаж, мистерии огня, тонкие настройки Access Bars и целительная сила Карсай Ци.
-
-☘️Моя философия за пределами любых инструкций.
-Я не работаю по протоколам. Для меня нет шаблонов, есть только ты - живая, вибрирующая, уникальная. Мои руки - это лишь проводник. Я настраиваюсь на частоту твоего сердца, считывая то, о чем молчит голос, но кричит душа. Я вижу тени прошлого и искры потенциала там, где другие видят лишь кожу☘️
-
-Искусство создавать момент.
-Каждая сессия со мной - это персональный код, написанный «здесь и сейчас». Я смешиваю техники, как алхимик создает эликсир: беру концентрат самых мощных практик и сплетаю их в единую ткань твоего исцеления. Мои руки не просто массируют - они «видят», проникая в глубину, где дремлет твоя истинная сила.
-
-🦋Моя миссия - не расслабление. Моя миссия - перерождение.
-Я не пришла, чтобы просто стереть следы усталости. Я пришла, чтобы провести тебя через очищающий огонь. Чтобы всё, что было «наносным» - страхи, старые роли, чужие ожидания - превратилось в пепел. 
-
-Мы идем в глубину, чтобы ты могла сбросить кожу, отпустить лишнее и наконец-то встретиться с тем, кто ты есть на самом деле
-Приди, чтобы сгореть. И вернись, чтобы воскреснуть 💜`
-            },
-            person_2: {
-                title: 'Ильвера Ситдикова',
-                photo: 'media/persons/person_21.jpeg',
-                text: `Архитектор внутренней трансформации.
-
-💜Для людей, которые достигли внешнего успеха и готовы открыть следующий уровень себя.
-Авторские ретриты.
-Дыхательные практики.
-Работа с телом, сознанием и глубинными ресурсами рода.
-
-«Я создаю пространство, где человек возвращается к себе после гонки за достижениями».
-
-ЕСЛИ ТЫ ЧУВСТВУЕШЬ:
-
-➖потеря контакта с собой
-➖усталость;
-➖пустота;
-➖ощущение «я всё имею, но чего-то не хватает».
-➖не возможность расслабиться
-
-У ТЕБЯ "ЗАШКАЛИВАЕТ":
-
-🔴 контроль;
-🔴 ответственность;
-🔴 одидания от тебя решений
-🔴 напряжение.
-
-Переключись из режима достижения в состояние присутствия. Выбери себя и желание достичь следующего уровня, у тебя появится: 
-
-» осознанность
-» энергия
-⏩ внутренняя сила
-⏩ улучшится качество жизни
-
-Мы ни просто 
-«работаем с родом, а 
-
-Выявляем, какие ресурсы и ограничения были переданы вам поколениями, и выбрать: что вы понесёте дальше
-кто я в истории семьи;
-что я создаю для следующих поколений;
-какое наследие оставлю.
-
-💜 Мои ретриты — пространство возвращения к себе.
-💜 Через дыхание, тело и глубинную работу сознания вы освобождаетесь от старых сценариев и открываете состояние внутренней силы, которое невозможно купить — его можно только прожить 💜`
-            },
-            person_3: {
-                title: 'Роман Цыбрий',
-                photo: 'media/persons/person_31.jpeg',
-                text: `Мастер глубинных состояний.
-Я не учу техникам.
-Я создаю пространство, где человек встречается с самим собой.
-
-Мой метод родился из практик Access Bars, но давно вышел за их пределы.
-Я называю это «Не Бары».
-Потому что это не про точки.
-Это про вход в иное измерение.
-Я открываю канал — и провожу поток через клиента.
-
-В этом потоке каждый оказывается ровно там, где ему нужно:
-
-➔ кто-то впервые за годы засыпает — и просыпается другим;
-➔ кто-то видит крылья и чувствует лёгкость;
-➡️  кто-то возвращается в детство — чтобы исцелить старое;
-➡️  кто-то переживает путешествие в другие реальности.
-
-Что меняется после сеанса?
-
-✔️ уходит напряжение, которое держалось годами;
-✔️ возвращается энергия и контакт с собой;
-✔️ приходит ясность и внутренняя свобода;
-✔️ человек вспоминает — кто он есть на самом деле.
-
-Мои клиенты, те, кто уже многое создал и чувствуют: «Я хочу не просто больше — я хочу глубже».
-
-Это не про расслабление.
-Это про перерождение. 
-Я не даю ответов, я провожу. 
-Я создаю пространство, где ты сам их услышишь, чтобы раскрыться 💜`
-            }
-        };
-
         const masterCards = document.querySelectorAll('.master-card');
         const masterModal = document.getElementById('masterModal');
         const masterModalTitle = document.getElementById('masterModalTitle');
@@ -1516,13 +1745,21 @@
         const masterModalText = document.getElementById('masterModalText');
         const masterModalClose = document.getElementById('masterModalClose');
 
-        function openMasterModal(key) {
-            const data = masterData[key];
-            if (!data) return;
-            masterModalTitle.textContent = data.title;
-            masterModalPhoto.src = data.photo;
-            masterModalPhoto.alt = data.title;
-            masterModalText.textContent = data.text;
+        // Текст мастера существует только в разметке карточки (.master-description).
+        // Модалка не хранит собственную копию — она берёт имя, фото и описание
+        // напрямую из той карточки, по которой кликнули, так что расхождений
+        // между текстом на странице и текстом в модалке быть не может.
+        function openMasterModal(card) {
+            const nameEl = card.querySelector('.master-content h2');
+            const photoEl = card.querySelector('.master-photo img');
+            const descEl = card.querySelector('.master-description');
+            if (!nameEl || !photoEl || !descEl) return;
+
+            const name = nameEl.textContent.trim();
+            masterModalTitle.textContent = name;
+            masterModalPhoto.src = photoEl.src;
+            masterModalPhoto.alt = name;
+            masterModalText.innerHTML = descEl.innerHTML;
             masterModal.classList.add('active');
             masterModal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -1534,15 +1771,14 @@
             document.body.style.overflow = '';
         }
 
-        masterCards.forEach((card, index) => {
-            const key = `person_${index + 1}`;
-            card.addEventListener('click', () => openMasterModal(key));
+        masterCards.forEach((card) => {
+            card.addEventListener('click', () => openMasterModal(card));
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
             card.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    openMasterModal(key);
+                    openMasterModal(card);
                 }
             });
         });
@@ -1557,6 +1793,120 @@
             }
         });
     </script>
+
+    <!-- ===== Автозагрузка и логика каруселей (Южный Урал / Отзывы) ===== -->
+    <script>
+        (function () {
+            function testImage(src) {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => resolve(true);
+                    img.onerror = () => resolve(false);
+                    img.src = src;
+                });
+            }
+
+            // Фото должны называться 1.jpg, 2.jpg, 3.jpg ... (или .jpeg/.png/.webp),
+            // по порядку, без пропусков номеров — загрузка идёт, пока не встретится «дыра».
+            async function loadSequentialImages(folder, max) {
+                const extensions = ['jpeg', 'JPEG', 'jpg', 'JPG', 'png', 'webp'];
+                const found = [];
+                for (let i = 1; i <= max; i++) {
+                    let hit = null;
+                    for (const ext of extensions) {
+                        const path = folder + '/' + i + '.' + ext;
+                        if (await testImage(path)) { hit = path; break; }
+                    }
+                    if (hit) { found.push(hit); } else { break; }
+                }
+                return found;
+            }
+
+            function buildSlides(track, images, altPrefix) {
+                track.innerHTML = '';
+                images.forEach((src, i) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = altPrefix + ' ' + (i + 1);
+                    img.loading = 'lazy';
+                    slide.appendChild(img);
+                    track.appendChild(slide);
+                });
+            }
+
+            function initArrows(root, viewport) {
+                const prevBtn = root.querySelector('.carousel-arrow.prev');
+                const nextBtn = root.querySelector('.carousel-arrow.next');
+
+                function getStep() {
+                    const slide = root.querySelector('.carousel-slide');
+
+                    if (!slide) {
+                        return viewport.clientWidth;
+                    }
+
+                    return slide.getBoundingClientRect().width;
+                }
+
+                function getMaxScroll() {
+                    return viewport.scrollWidth - viewport.clientWidth;
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    const step = getStep();
+                    const maxScroll = getMaxScroll();
+
+                    if (viewport.scrollLeft >= maxScroll - 4) {
+                        viewport.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        viewport.scrollBy({
+                            left: step,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    const step = getStep();
+
+                    if (viewport.scrollLeft <= 4) {
+                        viewport.scrollTo({
+                            left: getMaxScroll(),
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        viewport.scrollBy({
+                            left: -step,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            async function initCarousel(root) {
+                const folder = root.dataset.folder;
+                const altPrefix = root.dataset.alt || 'Фото';
+                const viewport = root.querySelector('.carousel-viewport');
+                const track = root.querySelector('.carousel-track');
+
+                const images = await loadSequentialImages(folder, 30);
+
+                if (images.length === 0) {
+                    root.innerHTML = '<p class="carousel-empty">Фотографии скоро появятся здесь</p>';
+                    return;
+                }
+
+                buildSlides(track, images, altPrefix);
+                initArrows(root, viewport);
+            }
+
+            document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+        })();
+    </script>
 </body>
 </html>
-
