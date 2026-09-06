@@ -484,15 +484,12 @@
             }
         }
 
-
-        /* ---- Подробное описание мастеров ---- */
+        /* ---- Подробное описание мастеров (на странице и в модалке — общий источник) ---- */
 
         .master-description {
-            margin: 28px 24px 
-        0;
+            margin: 28px 24px 0;
             padding-top: 22px;
             border-top: 1px solid rgba(74, 59, 94, 0.12);
-
             color: var(--text-color);
             font-size: 1rem;
             line-height: 1.65;
@@ -633,7 +630,19 @@
             color: #4a4a4a;
             font-size: 1rem;
             line-height: 1.6;
-            white-space: pre-line;
+        }
+
+        .master-modal-text p {
+            margin: 0 0 16px;
+        }
+
+        .master-modal-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .master-modal-text strong {
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         @media (max-width: 900px) {
@@ -853,7 +862,7 @@
         }
 
         /* ================================================== */
-        /* ===== Новые блоки: Для кого / 8 дней / Место / Отзывы ===== */
+        /* ===== Новые блоки: Для кого / 7 дней / Место / Отзывы ===== */
         /* ================================================== */
 
         .block-title {
@@ -907,7 +916,7 @@
             .who-grid { grid-template-columns: 1fr; }
         }
 
-        /* ---- Блок "Что произойдёт за 8 дней" ---- */
+        /* ---- Блок "Что произойдёт за 7 дней" ---- */
         .transform-list {
             list-style: none;
             max-width: 760px;
@@ -1412,7 +1421,7 @@
 
                 <div class="master-content">
 
-                    <span class="master-role">Проводник - целитель</span>
+                    <span class="master-role">Проводник</span>
 
                     <h2>Ильвера Ситдикова</h2>
 
@@ -1420,7 +1429,7 @@
 
                     <ul class="master-points">
                         <li>Энерготерапевт, мастер дыхательных практик.</li>
-                        <li>Основатель авторских ретритов, объединяет мастерии и телесных практиков для глубинных трансформации во взаимодействии с человеком.</li>
+                        <li>Основатель авторских ретритов, объединяет мастеров и телесных практиков для глубинных трансформации во взаимодействии с человеком.</li>
                     </ul>
 
                 </div>
@@ -1500,7 +1509,7 @@
                 </div>
             </section>
 
-            <!-- ===== Блок: Что произойдёт за 8 дней ===== -->
+            <!-- ===== Блок: Что произойдёт за 7 дней ===== -->
             <section class="content-section">
                 <div class="container">
                     <h2 class="block-title">Что произойдёт за 7 дней ретрита</h2>
@@ -1729,55 +1738,6 @@
 
 
     <script>
-        const masterData = {
-            person_1: {
-                title: 'Инна Шульгина',
-                photo: 'media/persons/person_11.jpeg',
-                text: `Мастер глубокой трансформации: 30 лет опыта в раскрытии потенциала человека
-
-Я — проводник к вашей истинной сути. Моя работа — это пространство, где стираются социальные маски и вы наконец-то встречаетесь с собой настоящим. За 30 лет практики я отточила мастерство видеть человека не как «пациента» или «клиента», а как живую энергию, требующую освобождения от накопленных годами «доспехов».
-
-Почему выбирают меня:
-
-Синтез опыта: 30 лет работы с людьми (из них 20 лет в обучении и 10 — в прямом целительстве) позволили мне создать метод, где интеллект встречается с интуицией, а глубинная психология — с телесными практиками.
-
-Индивидуальный «камерный» подход: Я не работаю по шаблонам. Мои сессии — это 2–3 часа полного погружения, где я настраиваюсь на ваш ритм. Кому-то нужна тишина для исцеления, кому-то — энергия для прорыва, кому-то — честное слово для ясности.
-
-Результат, который чувствуешь физически: Вы приходите с грузом, а уходите с легкостью. Моя работа снимает «зажимы», которые человек носит годами, возвращая вам состояние внутренней опоры и целостности.
-
-Статистика моей профессиональной осознанности:
-
-10 000+ часов глубокой работы с людьми: это тысячи историй, судеб и личностных перерождений.
-
-5 000+ личных сессий: мой метод проверен не в теории, а в тысячах живых встреч, где каждый человек выходил «пересобранным» и пробужденным.
-
-Мастерская настройка: за десятилетия работы я научилась входить в контакт с любым человеком без страха и границ, создавая безопасное поле для самых глубоких трансформаций.
-
-Ваша «пересборка» начинается там, где заканчиваются шаблоны.`
-            },
-            person_2: {
-                title: 'Ильвера Ситдикова',
-                photo: 'media/persons/person_21.jpeg',
-                text: `Мастер глубинной трансформации и дыхательных практик.
-
-15 лет опыта работы с людьми по очищению родовых программ.
-
-Я не просто работаю с симптомами — я нахожу «корень» там, где другие видят тупик. Мой метод — это синтез древних суфийских практик и проверенных веками техник работы с энергией, адаптированный под современные запросы.
-
-Почему выбирают меня:
-
-15 лет практики: от паломничеств по Местам Силы до личного наставничества специалистов.
-
-Результативность, подтвержденная цифрами: 1000+ человек прошли через программы очищения Рода, 1000+ свинцовых отливок вывели моих клиентов из состояний «застоя» в состояние потока.
-
-Безопасность и экологичность: я не даю «волшебных таблеток», в моём поле ты сонастроишься и начинаешь сам управлять своим состоянием, вниманием и энергией родового наследия.
-
-Система «под ключ»: от глубокой диагностики до личного сопровождения в наставничестве.
-
-Ваш результат — это освобождение от ограничивающих программ, которые годами мешали вам жить полноценно.`
-            }
-        };
-
         const masterCards = document.querySelectorAll('.master-card');
         const masterModal = document.getElementById('masterModal');
         const masterModalTitle = document.getElementById('masterModalTitle');
@@ -1785,13 +1745,21 @@
         const masterModalText = document.getElementById('masterModalText');
         const masterModalClose = document.getElementById('masterModalClose');
 
-        function openMasterModal(key) {
-            const data = masterData[key];
-            if (!data) return;
-            masterModalTitle.textContent = data.title;
-            masterModalPhoto.src = data.photo;
-            masterModalPhoto.alt = data.title;
-            masterModalText.textContent = data.text;
+        // Текст мастера существует только в разметке карточки (.master-description).
+        // Модалка не хранит собственную копию — она берёт имя, фото и описание
+        // напрямую из той карточки, по которой кликнули, так что расхождений
+        // между текстом на странице и текстом в модалке быть не может.
+        function openMasterModal(card) {
+            const nameEl = card.querySelector('.master-content h2');
+            const photoEl = card.querySelector('.master-photo img');
+            const descEl = card.querySelector('.master-description');
+            if (!nameEl || !photoEl || !descEl) return;
+
+            const name = nameEl.textContent.trim();
+            masterModalTitle.textContent = name;
+            masterModalPhoto.src = photoEl.src;
+            masterModalPhoto.alt = name;
+            masterModalText.innerHTML = descEl.innerHTML;
             masterModal.classList.add('active');
             masterModal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -1803,15 +1771,14 @@
             document.body.style.overflow = '';
         }
 
-        masterCards.forEach((card, index) => {
-            const key = `person_${index + 1}`;
-            card.addEventListener('click', () => openMasterModal(key));
+        masterCards.forEach((card) => {
+            card.addEventListener('click', () => openMasterModal(card));
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
             card.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    openMasterModal(key);
+                    openMasterModal(card);
                 }
             });
         });
