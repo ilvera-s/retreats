@@ -172,15 +172,15 @@
             display: inline-block;
             background-color: var(--primary-color);
             color: var(--text-light);
-            padding: 15px 35px;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            border: 1px solid var(--primary-color);
+            border: 2px solid var(--primary-color);
             white-space: nowrap;
         }
 
@@ -604,7 +604,7 @@
             height: auto;
             max-height: calc(90vh - 110px);
             object-fit: contain;
-            object-position: top center;
+            object-position: center bottom;
             display: block;
             background: #eee8e1;
             border-radius: 14px;
@@ -778,25 +778,6 @@
             justify-content: center;
             margin-top: 28px;
         }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover { background-color: transparent; color: var(--primary-color); }
-
-
 
         /* --- Фирменный Footer на основе вашего CSS --- */
         footer {
@@ -1152,6 +1133,22 @@
             scroll-snap-align: start;
         }
 
+        /* Слайды отзывов не должны растягиваться по высоте самого
+           длинного скана в ряду — иначе под короткими сканами остаётся
+           пустое место. Каждый слайд занимает высоту только своей картинки. */
+        .reviews-carousel .carousel-track {
+            align-items: flex-start;
+        }
+
+        /* Высота самого вьюпорта подстраивается под текущий видимый
+           слайд(ы) через JS (см. скрипт карусели ниже), поэтому обрезаем
+           по вертикали то, что не помещается — соседние, более высокие
+           слайды не будут "вылезать" за пределы текущей высоты. */
+        .reviews-carousel .carousel-viewport {
+            overflow-y: hidden;
+            transition: height 0.25s ease;
+        }
+
         /* Сам скан */
         .reviews-carousel .carousel-slide img {
             display: block;
@@ -1343,7 +1340,7 @@
             </section>
 
             <div class="section-cta">
-                <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                <a href="https://t.me/+ZWnhHGDJ9UJlNTYy"
                 class="btn"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -1351,9 +1348,9 @@
                 </a>
             </div>
 
-        <div class="hero-transition">
+        <h2 class="hero-transition">
             Проводники к твоей истинной сути
-        </div>
+        </h2>
 
         <section class="masters-grid" aria-label="Мастера">
 
@@ -1361,9 +1358,9 @@
 
                 <div class="master-photo">
                     <img src="media/persons/person_11.jpeg"
-                        alt="Фото мастера 1"
+                        alt="Инна Шульгина — проводник ретрита"
                         loading="eager"
-                        onerror="this.onerror=null;this.src='https://placehold.co/*:*//placehold.co';">
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x440?text=Инна+Шульгина';">
                 </div>
 
                 <div class="master-content">
@@ -1414,9 +1411,9 @@
 
                 <div class="master-photo">
                     <img src="media/persons/person_21.jpeg"
-                        alt="Фото мастера 2"
+                        alt="Ильвера Ситдикова — проводник ретрита"
                         loading="eager"
-                        onerror="this.onerror=null;this.src='https://placehold.co/*:*//placehold.co';">
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x440?text=Ильвера+Ситдикова';">
                 </div>
 
                 <div class="master-content">
@@ -1461,7 +1458,7 @@
         </section>
 
         <div class="section-cta">
-            <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+            <a href="https://t.me/+ZWnhHGDJ9UJlNTYy"
             class="btn"
             target="_blank"
             rel="noopener noreferrer">
@@ -1504,7 +1501,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
+                        <a href="https://t.me/+ZWnhHGDJ9UJlNTYy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
                     </div>
                 </div>
             </section>
@@ -1561,7 +1558,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
+                        <a href="https://t.me/+ZWnhHGDJ9UJlNTYy" class="btn" target="_blank" rel="noopener noreferrer">Узнать стоимость ретрита</a>
                     </div>
                 </div>
             </section>
@@ -1596,7 +1593,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Узнать ещё больше о ретрите</a>
+                        <a href="https://t.me/+ZWnhHGDJ9UJlNTYy" class="btn" target="_blank" rel="noopener noreferrer">Узнать ещё больше о ретрите</a>
                     </div>
                 </div>
             </section>
@@ -1630,7 +1627,7 @@
                     </div>
 
                     <div class="section-cta">
-                        <a href="https://t.me/+SUhxZLz2dvRjNGEy"
+                        <a href="https://t.me/+ZWnhHGDJ9UJlNTYy"
                         class="btn"
                         target="_blank"
                         rel="noopener noreferrer">
@@ -1652,7 +1649,7 @@
                 <a href="programma.html" class="btn">
                     ПРОГРАММА
                 </a>
-                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
+                <a href="https://t.me/+ZWnhHGDJ9UJlNTYy" class="btn" target="_blank" rel="noopener noreferrer">Наш тг канал</a>
                 <a href="https://t.me/ILVERA69" class="btn-outline" target="_blank" rel="noopener noreferrer">Записаться</a>
                 <div class="cta-call">
                     <span>Или позвонить</span>
@@ -1717,7 +1714,7 @@
                 </a>
                 
                 <!-- КАНАЛ (Громкоговоритель/Новости) -->
-                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
+                <a href="https://t.me/+ZWnhHGDJ9UJlNTYy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
                     <i class="fas fa-bullhorn"></i>
                 </a>                
                 
@@ -1888,6 +1885,69 @@
                 });
             }
 
+            // Для карусели отзывов (где картинки — сканы разной высоты и
+            // не обрезаны по фиксированному aspect-ratio) высота вьюпорта
+            // подгоняется под сканы, которые видны в данный момент, чтобы
+            // под короткими сканами не оставалось пустого места.
+            function initHeightSync(root, viewport, track) {
+                let rafId = null;
+
+                function measureVisibleHeight() {
+                    const slides = Array.from(track.children);
+                    if (!slides.length) return 0;
+
+                    const viewportRect = viewport.getBoundingClientRect();
+                    let maxHeight = 0;
+
+                    slides.forEach((slide) => {
+                        const rect = slide.getBoundingClientRect();
+                        const isVisible = rect.right > viewportRect.left + 1 &&
+                            rect.left < viewportRect.right - 1;
+                        if (!isVisible) return;
+
+                        const img = slide.querySelector('img');
+                        if (!img) return;
+
+                        let renderedHeight = img.getBoundingClientRect().height;
+                        if (!renderedHeight && img.naturalWidth && img.naturalHeight) {
+                            renderedHeight = slide.clientWidth * (img.naturalHeight / img.naturalWidth);
+                        }
+                        if (renderedHeight > maxHeight) maxHeight = renderedHeight;
+                    });
+
+                    return maxHeight;
+                }
+
+                function syncHeight() {
+                    const height = measureVisibleHeight();
+                    if (height > 0) {
+                        viewport.style.height = Math.ceil(height) + 'px';
+                    }
+                }
+
+                function requestSync() {
+                    if (rafId) return;
+                    rafId = requestAnimationFrame(() => {
+                        rafId = null;
+                        syncHeight();
+                    });
+                }
+
+                viewport.addEventListener('scroll', requestSync);
+                window.addEventListener('resize', requestSync);
+
+                // Сканы могут догружаться асинхронно — пересчитываем высоту
+                // по мере их появления, плюс сразу и с небольшой задержкой
+                // (на случай сдвигов раскладки после применения шрифтов).
+                track.querySelectorAll('img').forEach((img) => {
+                    if (img.complete) return;
+                    img.addEventListener('load', requestSync);
+                });
+
+                syncHeight();
+                requestSync();
+            }
+
             async function initCarousel(root) {
                 const folder = root.dataset.folder;
                 const altPrefix = root.dataset.alt || 'Фото';
@@ -1903,6 +1963,10 @@
 
                 buildSlides(track, images, altPrefix);
                 initArrows(root, viewport);
+
+                if (root.classList.contains('reviews-carousel')) {
+                    initHeightSync(root, viewport, track);
+                }
             }
 
             document.querySelectorAll('[data-carousel]').forEach(initCarousel);
